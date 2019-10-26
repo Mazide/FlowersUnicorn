@@ -12,7 +12,11 @@ class MainViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        viewControllers = [CatalogViewController()]
+        
+        let catalogModuleFactory = CatalogModuleFactory()
+        let module = catalogModuleFactory.createModule()
+        if let viewController = module.view as? UIViewController {
+            viewControllers = [viewController]
+        }
     }
 }

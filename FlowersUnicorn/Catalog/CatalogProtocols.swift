@@ -8,3 +8,8 @@
 
 import Foundation
 
+protocol CatalogViewInput: ListView { }
+
+protocol CatalogViewOutput {
+    func loadData()
+}

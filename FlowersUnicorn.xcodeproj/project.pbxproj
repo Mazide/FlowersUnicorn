@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F4330D0E2363AD2A00D33739 /* CatalogItemCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4330D0C2363AD2A00D33739 /* CatalogItemCollectionCell.swift */; };
+		F4330D0F2363AD2A00D33739 /* CatalogItemCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4330D0D2363AD2A00D33739 /* CatalogItemCollectionCell.xib */; };
+		F4330D112363B16000D33739 /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F4330D102363B16000D33739 /* test.jpg */; };
+		F448BA822363A33B00E3A99A /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448BA812363A33B00E3A99A /* CellModel.swift */; };
+		F448BA862363A3C500E3A99A /* CatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448BA842363A3C500E3A99A /* CatalogView.swift */; };
+		F448BA872363A3C500E3A99A /* CatalogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F448BA852363A3C500E3A99A /* CatalogView.xib */; };
+		F448BA8C2363A3EB00E3A99A /* CatalogPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448BA8B2363A3EB00E3A99A /* CatalogPresenter.swift */; };
+		F448BA942363A7C400E3A99A /* CatalogModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448BA932363A7C400E3A99A /* CatalogModuleFactory.swift */; };
 		FE587BF023639C4E00EBDE1B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE587BEF23639C4E00EBDE1B /* MainViewController.swift */; };
 		FE587BF223639C9700EBDE1B /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE587BF123639C9700EBDE1B /* CatalogViewController.swift */; };
 		FE587BF523639D1400EBDE1B /* CatalogProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE587BF423639D1400EBDE1B /* CatalogProtocols.swift */; };
@@ -16,6 +24,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F4330D0C2363AD2A00D33739 /* CatalogItemCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogItemCollectionCell.swift; sourceTree = "<group>"; };
+		F4330D0D2363AD2A00D33739 /* CatalogItemCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatalogItemCollectionCell.xib; sourceTree = "<group>"; };
+		F4330D102363B16000D33739 /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
+		F448BA812363A33B00E3A99A /* CellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
+		F448BA842363A3C500E3A99A /* CatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogView.swift; sourceTree = "<group>"; };
+		F448BA852363A3C500E3A99A /* CatalogView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatalogView.xib; sourceTree = "<group>"; };
+		F448BA8B2363A3EB00E3A99A /* CatalogPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogPresenter.swift; sourceTree = "<group>"; };
+		F448BA932363A7C400E3A99A /* CatalogModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogModuleFactory.swift; sourceTree = "<group>"; };
 		FE587BEF23639C4E00EBDE1B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FE587BF123639C9700EBDE1B /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
 		FE587BF423639D1400EBDE1B /* CatalogProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogProtocols.swift; sourceTree = "<group>"; };
@@ -37,10 +53,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F448BA832363A33F00E3A99A /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				F448BA812363A33B00E3A99A /* CellModel.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		F448BA892363A3CD00E3A99A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F448BA842363A3C500E3A99A /* CatalogView.swift */,
+				F448BA852363A3C500E3A99A /* CatalogView.xib */,
+				F448BA8D2363A57B00E3A99A /* Cells */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F448BA8A2363A3D300E3A99A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F448BA8B2363A3EB00E3A99A /* CatalogPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F448BA8D2363A57B00E3A99A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F4330D0C2363AD2A00D33739 /* CatalogItemCollectionCell.swift */,
+				F4330D0D2363AD2A00D33739 /* CatalogItemCollectionCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F448BA922363A7AC00E3A99A /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				F448BA932363A7C400E3A99A /* CatalogModuleFactory.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
 		FE587BF323639CB400EBDE1B /* Catalog */ = {
 			isa = PBXGroup;
 			children = (
 				FE587BF423639D1400EBDE1B /* CatalogProtocols.swift */,
+				F448BA922363A7AC00E3A99A /* Container */,
+				F448BA8A2363A3D300E3A99A /* Presenter */,
+				F448BA892363A3CD00E3A99A /* View */,
 			);
 			path = Catalog;
 			sourceTree = "<group>";
@@ -64,8 +126,10 @@
 		FEF505F7234D3C470052ACA5 /* FlowersUnicorn */ = {
 			isa = PBXGroup;
 			children = (
+				F4330D102363B16000D33739 /* test.jpg */,
 				FEF505F8234D3C470052ACA5 /* AppDelegate.swift */,
 				FE587BEF23639C4E00EBDE1B /* MainViewController.swift */,
+				F448BA832363A33F00E3A99A /* Base */,
 				FE587BF323639CB400EBDE1B /* Catalog */,
 				FE587BF123639C9700EBDE1B /* CatalogViewController.swift */,
 				FEF50601234D3C4A0052ACA5 /* Assets.xcassets */,
@@ -133,6 +197,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F448BA872363A3C500E3A99A /* CatalogView.xib in Resources */,
+				F4330D0F2363AD2A00D33739 /* CatalogItemCollectionCell.xib in Resources */,
+				F4330D112363B16000D33739 /* test.jpg in Resources */,
 				FEF50605234D3C4A0052ACA5 /* LaunchScreen.storyboard in Resources */,
 				FEF50602234D3C4A0052ACA5 /* Assets.xcassets in Resources */,
 			);
@@ -147,7 +214,12 @@
 			files = (
 				FE587BF523639D1400EBDE1B /* CatalogProtocols.swift in Sources */,
 				FE587BF223639C9700EBDE1B /* CatalogViewController.swift in Sources */,
+				F448BA942363A7C400E3A99A /* CatalogModuleFactory.swift in Sources */,
 				FEF505F9234D3C470052ACA5 /* AppDelegate.swift in Sources */,
+				F448BA822363A33B00E3A99A /* CellModel.swift in Sources */,
+				F4330D0E2363AD2A00D33739 /* CatalogItemCollectionCell.swift in Sources */,
+				F448BA862363A3C500E3A99A /* CatalogView.swift in Sources */,
+				F448BA8C2363A3EB00E3A99A /* CatalogPresenter.swift in Sources */,
 				FE587BF023639C4E00EBDE1B /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
