@@ -11,7 +11,6 @@ import UIKit
 typealias CellModelTapHandler = (CellModel) -> Void
 
 protocol CellModel {
-    var id: String { get }
     var modelId: String { get }
     var cellId: String { get }
     var tapHandler: CellModelTapHandler? { get }
@@ -22,7 +21,10 @@ protocol CellModelConfigurable {
     func configure(with cellModel: CellModel)
 }
 
-protocol ListView: class {
+protocol ListViewInput: class {
     func setup(cellModels: [CellModel])
 }
 
+protocol ListViewOutput: class {
+    func viewDidLoad()
+}
