@@ -53,12 +53,12 @@ extension CatalogPresenter: CatalogViewOutput {
                                                                     buyHandler: buyHandler,
                                                                     isInBasketHandler: isItemInBusket,
                                                                     size: CGSize(width: 200, height: 500),
-                                                                    image: UIImage(named: "test.jpg")!,
+                                                                    imagePath: catalogItem.imagePath,
                                                                     price: String(catalogItem.price),
                                                                     title: catalogItem.title)
                 return cellModel
             }
-                        
+            
             self?.view.setup(cellModels: cellModels)
         }
     }

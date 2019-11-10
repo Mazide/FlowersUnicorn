@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B15690B5578BEB8B5702C3CA /* Pods_FlowersUnicorn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1956F838B97E86A18E133755 /* Pods_FlowersUnicorn.framework */; };
-		F4330D112363B16000D33739 /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F4330D102363B16000D33739 /* test.jpg */; };
 		F4330D142364785500D33739 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4330D132364785500D33739 /* GoogleService-Info.plist */; };
 		F4330D172364788400D33739 /* CatalogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4330D162364788400D33739 /* CatalogService.swift */; };
 		F4330D1C2364790800D33739 /* CatalogItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4330D1B2364790800D33739 /* CatalogItem.swift */; };
@@ -43,7 +42,6 @@
 		1956F838B97E86A18E133755 /* Pods_FlowersUnicorn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlowersUnicorn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AB5058748C5B716057769F1 /* Pods-FlowersUnicorn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowersUnicorn.release.xcconfig"; path = "Target Support Files/Pods-FlowersUnicorn/Pods-FlowersUnicorn.release.xcconfig"; sourceTree = "<group>"; };
 		AFDC06063FB112BFD2B6D159 /* Pods-FlowersUnicorn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowersUnicorn.debug.xcconfig"; path = "Target Support Files/Pods-FlowersUnicorn/Pods-FlowersUnicorn.debug.xcconfig"; sourceTree = "<group>"; };
-		F4330D102363B16000D33739 /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
 		F4330D132364785500D33739 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F4330D162364788400D33739 /* CatalogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogService.swift; sourceTree = "<group>"; };
 		F4330D1B2364790800D33739 /* CatalogItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogItem.swift; sourceTree = "<group>"; };
@@ -289,7 +287,6 @@
 		FEF505F7234D3C470052ACA5 /* FlowersUnicorn */ = {
 			isa = PBXGroup;
 			children = (
-				F4330D102363B16000D33739 /* test.jpg */,
 				FEF505F8234D3C470052ACA5 /* AppDelegate.swift */,
 				F49AE896236EE9F800516681 /* UI */,
 				F4330D19236478C700D33739 /* Modules */,
@@ -365,7 +362,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F448BA872363A3C500E3A99A /* CatalogView.xib in Resources */,
-				F4330D112363B16000D33739 /* test.jpg in Resources */,
 				F49AE8CA2370564E00516681 /* BasketItemOrderCell.xib in Resources */,
 				FEF50605234D3C4A0052ACA5 /* LaunchScreen.storyboard in Resources */,
 				FEF50602234D3C4A0052ACA5 /* Assets.xcassets in Resources */,
@@ -582,7 +578,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 3E6P6Z2C4R;
 				INFOPLIST_FILE = FlowersUnicorn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -603,7 +599,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 3E6P6Z2C4R;
 				INFOPLIST_FILE = FlowersUnicorn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;

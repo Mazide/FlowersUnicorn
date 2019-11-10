@@ -8,6 +8,6 @@ target 'FlowersUnicorn' do
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
-  pod 'Kingfisher', '~> 5.0'
+  pod 'AlamofireImage'
   pod 'SwiftyJSON', '~> 4.0'
 end

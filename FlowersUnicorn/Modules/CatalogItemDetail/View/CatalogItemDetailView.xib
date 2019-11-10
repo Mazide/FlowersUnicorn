@@ -24,7 +24,7 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fqf-2z-atz">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test.jpg" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bBf-7r-J5p">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bBf-7r-J5p">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="500" id="Z18-8W-VVr"/>
@@ -36,7 +36,6 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="308" id="OeL-Oi-DLi"/>
                             </constraints>
-                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                             <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -84,7 +83,4 @@
             <point key="canvasLocation" x="131.8840579710145" y="152.67857142857142"/>
         </view>
     </objects>
-    <resources>
-        <image name="test.jpg" width="1080" height="1124"/>
-    </resources>
 </document>

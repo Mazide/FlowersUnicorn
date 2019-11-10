@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Kingfisher
+import AlamofireImage
 
 class CatalogItemDetailView: UIViewController {
 
@@ -33,7 +33,7 @@ class CatalogItemDetailView: UIViewController {
 extension CatalogItemDetailView: CatalogItemDetailViewInput {
     func setup(viewModel: CatalogItemDetailViewModel) {
         if let url = URL.init(string: viewModel.imagePath) {
-            imageView.kf.setImage(with: url)
+            imageView.af_setImage(withURL: url)
         }
         
         descriptionTextView.text = viewModel.fullDescription

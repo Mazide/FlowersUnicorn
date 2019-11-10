@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Kingfisher
+import AlamofireImage
 
 struct BasketItemOrderCellModel: CellModel {
     let modelId: String
@@ -39,7 +39,7 @@ extension BasketItemOrderCell: CellModelConfigurable {
         titleLabel.text = basketItemCellModel.title
         
         if let url = URL.init(string: basketItemCellModel.iconPath) {
-            imageView?.kf.setImage(with: url)
+            photoView?.af_setImage(withURL: url)
         }
     }
 }

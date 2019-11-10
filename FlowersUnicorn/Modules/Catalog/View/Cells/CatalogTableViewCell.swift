@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 struct CatalogItemCollectionCellModel: CellModel {    
     var modelId: String
@@ -16,7 +17,7 @@ struct CatalogItemCollectionCellModel: CellModel {
     var isInBasketHandler: ((CellModel) -> Bool)?
     var size: CGSize
     
-    var image: UIImage
+    var imagePath: String
     var price: String
     var title: String
 }
@@ -29,13 +30,6 @@ class CatalogTableViewCell: UITableViewCell {
     @IBOutlet weak var buyButton: UIButton!
     
     private var catalogCellModel: CatalogItemCollectionCellModel!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        imageContainerView.layer.cornerRadius = 15
-        imageContainerView.clipsToBounds = true
-    }
     
     @IBAction func buy() {
         catalogCellModel?.buyHandler?(catalogCellModel)
@@ -56,8 +50,18 @@ extension CatalogTableViewCell: CellModelConfigurable {
             fatalError("Incorrect cell model type for CatalogItemCell")
         }
         
+        imageContainerView.layer.cornerRadius = 15
+        imageContainerView.clipsToBounds = true
+        
         self.catalogCellModel = catalogCellModel
-        itemImageView.image = catalogCellModel.image
+        
+        if let imageURL = URL(string: catalogCellModel.imagePath) {
+            itemImageView?.clipsToBounds = true
+            itemImageView?.af_setImage(withURL: imageURL, completion: { [weak self] (response) in
+                self?.setNeedsLayout()
+            })
+        }
+        
         titleLabel.text = catalogCellModel.title
         
         checkIsInBasket()
