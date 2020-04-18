@@ -3,13 +3,14 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BasketView" customModule="FlowersUnicorn" customModuleProvider="target">
             <connections>
+                <outlet property="bottomConstaint" destination="yC6-4v-TEE" id="6Du-4Q-HJ9"/>
                 <outlet property="tableView" destination="jHK-Wh-ZQV" id="WcW-Zb-Mup"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -19,6 +20,12 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Корзина пуста 😩" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSY-v0-a3X">
+                    <rect key="frame" x="108" y="433" width="198.5" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jHK-Wh-ZQV">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -30,10 +37,12 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="jHK-Wh-ZQV" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Pkt-i8-7GE"/>
-                <constraint firstItem="jHK-Wh-ZQV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="TNA-SX-p3y"/>
-                <constraint firstAttribute="bottom" secondItem="jHK-Wh-ZQV" secondAttribute="bottom" id="jJg-WG-mQs"/>
-                <constraint firstItem="jHK-Wh-ZQV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nZr-sw-AZV"/>
+                <constraint firstItem="jHK-Wh-ZQV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="8Qq-MG-qy3"/>
+                <constraint firstItem="nSY-v0-a3X" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="BA8-SZ-AcS"/>
+                <constraint firstItem="nSY-v0-a3X" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="KXF-4Z-ifD"/>
+                <constraint firstItem="jHK-Wh-ZQV" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="nEm-mw-hzb"/>
+                <constraint firstAttribute="bottom" secondItem="jHK-Wh-ZQV" secondAttribute="bottom" id="yC6-4v-TEE"/>
+                <constraint firstItem="jHK-Wh-ZQV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="yyq-FU-fGL"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="131.8840579710145" y="128.57142857142856"/>

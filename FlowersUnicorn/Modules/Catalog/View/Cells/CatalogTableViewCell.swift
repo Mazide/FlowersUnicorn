@@ -25,11 +25,16 @@ struct CatalogItemCollectionCellModel: CellModel {
 class CatalogTableViewCell: UITableViewCell {
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var imageContainerView: UIView!
-    @IBOutlet weak var shadowView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var buyButton: UIButton!
+    @IBOutlet weak var buyButton: CatalogItemButton!
+    @IBOutlet weak var gradientView: UIView!
     
     private var catalogCellModel: CatalogItemCollectionCellModel!
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        itemImageView.image = nil
+    }
     
     @IBAction func buy() {
         catalogCellModel?.buyHandler?(catalogCellModel)
@@ -37,9 +42,25 @@ class CatalogTableViewCell: UITableViewCell {
         checkIsInBasket()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        itemImageView.layer.cornerRadius = 15
+        itemImageView.clipsToBounds = true
+        
+        let path = UIBezierPath(roundedRect: gradientView.bounds,
+                                byRoundingCorners: [.bottomRight, .bottomLeft],
+                                cornerRadii: CGSize(width: 15, height: 15))
+
+        let maskLayer = CAShapeLayer()
+
+        maskLayer.path = path.cgPath
+        gradientView.layer.mask = maskLayer
+        gradientView.clipsToBounds = true
+    }
+    
     func checkIsInBasket() {
         let isInBasket = catalogCellModel?.isInBasketHandler?(catalogCellModel) ?? false
-        let buyButtonTitle = isInBasket ? "В Корзине" : "Купить"
+        let buyButtonTitle = isInBasket ? "В Корзине" : catalogCellModel.price
         buyButton.setTitle(buyButtonTitle, for: .normal)
     }
 }
@@ -49,12 +70,11 @@ extension CatalogTableViewCell: CellModelConfigurable {
         guard let catalogCellModel = cellModel as? CatalogItemCollectionCellModel else {
             fatalError("Incorrect cell model type for CatalogItemCell")
         }
-        
-        imageContainerView.layer.cornerRadius = 15
-        imageContainerView.clipsToBounds = true
-        
+                
         self.catalogCellModel = catalogCellModel
         
+        buyButton.titleLabel?.text = catalogCellModel.price
+                
         if let imageURL = URL(string: catalogCellModel.imagePath) {
             itemImageView?.clipsToBounds = true
             itemImageView?.af_setImage(withURL: imageURL, completion: { [weak self] (response) in

@@ -27,6 +27,7 @@ class BasketService: NSObject {
     
     func remove(id: String) {
         ids.remove(id)
+        save()
     }
     
     func isContain(id: String) -> Bool {

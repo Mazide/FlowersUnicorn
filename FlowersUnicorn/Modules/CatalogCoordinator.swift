@@ -9,7 +9,8 @@
 import UIKit
 
 class CatalogCoordinator {
-    var navigationController: UINavigationController?
+    
+    var catalogViewController: UIViewController?
     
     func startCatalogFlow() -> UIViewController {
         let catalogModuleFactory = CatalogModuleFactory()
@@ -18,29 +19,49 @@ class CatalogCoordinator {
             fatalError("Catalog module factory created empty or wrong type view")
         }
 
-        navigationController = UINavigationController(rootViewController: viewController)
-        return navigationController!
+        catalogViewController = viewController
+        
+        let navigationController = UINavigationController(rootViewController: viewController)
+        if #available(iOS 13.0, *) {
+            navigationController.navigationBar.largeContentTitle = "Каталог"
+        } else {
+            // Fallback on earlier versions
+        }
+        navigationController.navigationBar.prefersLargeTitles = true
+        return navigationController
+    }
+    
+    private func createBasketViewController() -> UIViewController {
+        let basketViewController = BasketView(nibName: "BasketView", bundle: nil)
+        let basketPresenter = BasketViewPresenter(view: basketViewController, moduleOutput: self)
+        basketViewController.output = basketPresenter
+        let navigationController = UINavigationController(rootViewController: basketViewController)
+        navigationController.setNavigationBarHidden(true, animated: false)
+        return navigationController
     }
 }
 
 extension CatalogCoordinator: CatalogModuleOutput {
     func didTapBasket() {
-        let basketViewController = BasketView.init(nibName: "BasketView", bundle: nil)
-        let basketPresenter = BasketViewPresenter.init(view: basketViewController, moduleOutput: self)
-        basketViewController.output = basketPresenter
-        navigationController?.viewControllers.first!.present(basketViewController, animated: true, completion: nil  )
+        let basketViewController = createBasketViewController()
+        catalogViewController?.present(basketViewController, animated: true, completion: nil)
     }
     
     func didSelectCatalogItem(with id: String) {
         let view = CatalogItemDetailView.init(nibName: "CatalogItemDetailView", bundle: nil)
         let presenter = CatalogItemDetailPresenter(view: view, moduleOutput: self, itemId: id)
         view.output = presenter
-        navigationController?.viewControllers.first!.present(view, animated: true, completion: nil)
+        catalogViewController?.present(view, animated: true, completion: nil)
     }
 }
 
 extension CatalogCoordinator: BasketModuleOutput {
-    
+    func didSelectItem(with id: String) {
+        let view = CatalogItemDetailView.init(nibName: "CatalogItemDetailView", bundle: nil)
+        let presenter = CatalogItemDetailPresenter(view: view, moduleOutput: self, itemId: id)
+        view.output = presenter
+        catalogViewController?.present(view, animated: true, completion: nil)
+    }
 }
 
 extension CatalogCoordinator: CatalogItemDetailModuleOutput {

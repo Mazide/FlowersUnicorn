@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		742D15E699266114C3CA7A3B /* BasketItemOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D1D289A44CC8A79CE7CA0 /* BasketItemOrderCell.swift */; };
+		742D1B97CA2733DCDA987B18 /* BasketField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D1A53CDA0C5D6BA3AC8B1 /* BasketField.swift */; };
+		742D1B9FCA05C23B44AF6FC7 /* BasketTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D1C81343DA7C7285881FA /* BasketTextView.swift */; };
+		742D1BB77159635142FE8E05 /* BasketItemOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 742D1BCF3B987DDD1B216D3D /* BasketItemOrderCell.xib */; };
 		B15690B5578BEB8B5702C3CA /* Pods_FlowersUnicorn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1956F838B97E86A18E133755 /* Pods_FlowersUnicorn.framework */; };
 		F4330D142364785500D33739 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4330D132364785500D33739 /* GoogleService-Info.plist */; };
 		F4330D172364788400D33739 /* CatalogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4330D162364788400D33739 /* CatalogService.swift */; };
@@ -30,9 +34,32 @@
 		F49AE8BF237053C300516681 /* BasketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49AE8BD237053C300516681 /* BasketView.swift */; };
 		F49AE8C0237053C300516681 /* BasketView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F49AE8BE237053C300516681 /* BasketView.xib */; };
 		F49AE8C32370556A00516681 /* BasketViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49AE8C22370556A00516681 /* BasketViewPresenter.swift */; };
-		F49AE8C92370564E00516681 /* BasketItemOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49AE8C72370564E00516681 /* BasketItemOrderCell.swift */; };
-		F49AE8CA2370564E00516681 /* BasketItemOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F49AE8C82370564E00516681 /* BasketItemOrderCell.xib */; };
 		FE587BF523639D1400EBDE1B /* CatalogProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE587BF423639D1400EBDE1B /* CatalogProtocols.swift */; };
+		FE8BCF63243A732E00E89DDC /* BasketFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8BCF61243A732E00E89DDC /* BasketFieldCell.swift */; };
+		FE8BCF64243A732E00E89DDC /* BasketFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE8BCF62243A732E00E89DDC /* BasketFieldCell.xib */; };
+		FE8BCF67243A736800E89DDC /* BasketPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8BCF65243A736800E89DDC /* BasketPriceCell.swift */; };
+		FE8BCF68243A736800E89DDC /* BasketPriceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE8BCF66243A736800E89DDC /* BasketPriceCell.xib */; };
+		FE8BCF6F243A747900E89DDC /* BasketDestinationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8BCF6D243A747900E89DDC /* BasketDestinationCell.swift */; };
+		FE8BCF70243A747900E89DDC /* BasketDestinationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE8BCF6E243A747900E89DDC /* BasketDestinationCell.xib */; };
+		FE8BCF77244232B200E89DDC /* BasketPriceCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8BCF76244232B200E89DDC /* BasketPriceCellModel.swift */; };
+		FE8BCF7A2442407900E89DDC /* BasketOrderButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8BCF782442407900E89DDC /* BasketOrderButtonCell.swift */; };
+		FE8BCF7B2442407900E89DDC /* BasketOrderButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE8BCF792442407900E89DDC /* BasketOrderButtonCell.xib */; };
+		FE8BCF8D2442496300E89DDC /* BasketDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8BCF8B2442496300E89DDC /* BasketDateCell.swift */; };
+		FE8BCF8E2442496300E89DDC /* BasketDateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE8BCF8C2442496300E89DDC /* BasketDateCell.xib */; };
+		FE8BCF9224424D9600E89DDC /* BasketDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8BCF9024424D9600E89DDC /* BasketDatePicker.swift */; };
+		FE8BCF9324424D9600E89DDC /* BasketDatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE8BCF9124424D9600E89DDC /* BasketDatePicker.xib */; };
+		FE8BCF962442570300E89DDC /* DestinationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8BCF952442570300E89DDC /* DestinationsService.swift */; };
+		FE8BCF9824425F4A00E89DDC /* OrderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8BCF9724425F4A00E89DDC /* OrderService.swift */; };
+		FE8BCF9B244322C200E89DDC /* NavbarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE8BCF9A244322C200E89DDC /* NavbarView.xib */; };
+		FE8BCF9D24432E4000E89DDC /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8BCF9C24432E4000E89DDC /* TitleLabel.swift */; };
+		FE8BCFA124433C2A00E89DDC /* BasketButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8BCFA024433C2A00E89DDC /* BasketButton.swift */; };
+		FE8BCFA324433FAD00E89DDC /* CatalogItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8BCFA224433FAD00E89DDC /* CatalogItemButton.swift */; };
+		FE8BCFA52443416C00E89DDC /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8BCFA42443416C00E89DDC /* Colors.swift */; };
+		FE8BCFA72443482000E89DDC /* RoundedButtonWithShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8BCFA62443482000E89DDC /* RoundedButtonWithShadow.swift */; };
+		FE8BCFB3244B158F00E89DDC /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = FE8BCFB2244B158F00E89DDC /* test.json */; };
+		FE8BCFB5244B1FD400E89DDC /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8BCFB4244B1FD400E89DDC /* UIColor+Additions.swift */; };
+		FE8BCFB9244B465E00E89DDC /* DestinationTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8BCFB7244B465E00E89DDC /* DestinationTitleCell.swift */; };
+		FE8BCFBA244B465E00E89DDC /* DestinationTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE8BCFB8244B465E00E89DDC /* DestinationTitleCell.xib */; };
 		FEF505F9234D3C470052ACA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF505F8234D3C470052ACA5 /* AppDelegate.swift */; };
 		FEF50602234D3C4A0052ACA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEF50601234D3C4A0052ACA5 /* Assets.xcassets */; };
 		FEF50605234D3C4A0052ACA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEF50603234D3C4A0052ACA5 /* LaunchScreen.storyboard */; };
@@ -41,6 +68,10 @@
 /* Begin PBXFileReference section */
 		1956F838B97E86A18E133755 /* Pods_FlowersUnicorn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlowersUnicorn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AB5058748C5B716057769F1 /* Pods-FlowersUnicorn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowersUnicorn.release.xcconfig"; path = "Target Support Files/Pods-FlowersUnicorn/Pods-FlowersUnicorn.release.xcconfig"; sourceTree = "<group>"; };
+		742D1A53CDA0C5D6BA3AC8B1 /* BasketField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketField.swift; sourceTree = "<group>"; };
+		742D1BCF3B987DDD1B216D3D /* BasketItemOrderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketItemOrderCell.xib; sourceTree = "<group>"; };
+		742D1C81343DA7C7285881FA /* BasketTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketTextView.swift; sourceTree = "<group>"; };
+		742D1D289A44CC8A79CE7CA0 /* BasketItemOrderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketItemOrderCell.swift; sourceTree = "<group>"; };
 		AFDC06063FB112BFD2B6D159 /* Pods-FlowersUnicorn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowersUnicorn.debug.xcconfig"; path = "Target Support Files/Pods-FlowersUnicorn/Pods-FlowersUnicorn.debug.xcconfig"; sourceTree = "<group>"; };
 		F4330D132364785500D33739 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F4330D162364788400D33739 /* CatalogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogService.swift; sourceTree = "<group>"; };
@@ -64,9 +95,41 @@
 		F49AE8BD237053C300516681 /* BasketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketView.swift; sourceTree = "<group>"; };
 		F49AE8BE237053C300516681 /* BasketView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketView.xib; sourceTree = "<group>"; };
 		F49AE8C22370556A00516681 /* BasketViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewPresenter.swift; sourceTree = "<group>"; };
-		F49AE8C72370564E00516681 /* BasketItemOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketItemOrderCell.swift; sourceTree = "<group>"; };
-		F49AE8C82370564E00516681 /* BasketItemOrderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketItemOrderCell.xib; sourceTree = "<group>"; };
 		FE587BF423639D1400EBDE1B /* CatalogProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogProtocols.swift; sourceTree = "<group>"; };
+		FE8BCF61243A732E00E89DDC /* BasketFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketFieldCell.swift; sourceTree = "<group>"; };
+		FE8BCF62243A732E00E89DDC /* BasketFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketFieldCell.xib; sourceTree = "<group>"; };
+		FE8BCF65243A736800E89DDC /* BasketPriceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketPriceCell.swift; sourceTree = "<group>"; };
+		FE8BCF66243A736800E89DDC /* BasketPriceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketPriceCell.xib; sourceTree = "<group>"; };
+		FE8BCF6D243A747900E89DDC /* BasketDestinationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketDestinationCell.swift; sourceTree = "<group>"; };
+		FE8BCF6E243A747900E89DDC /* BasketDestinationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketDestinationCell.xib; sourceTree = "<group>"; };
+		FE8BCF76244232B200E89DDC /* BasketPriceCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketPriceCellModel.swift; sourceTree = "<group>"; };
+		FE8BCF782442407900E89DDC /* BasketOrderButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketOrderButtonCell.swift; sourceTree = "<group>"; };
+		FE8BCF792442407900E89DDC /* BasketOrderButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketOrderButtonCell.xib; sourceTree = "<group>"; };
+		FE8BCF8B2442496300E89DDC /* BasketDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketDateCell.swift; sourceTree = "<group>"; };
+		FE8BCF8C2442496300E89DDC /* BasketDateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketDateCell.xib; sourceTree = "<group>"; };
+		FE8BCF9024424D9600E89DDC /* BasketDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketDatePicker.swift; sourceTree = "<group>"; };
+		FE8BCF9124424D9600E89DDC /* BasketDatePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketDatePicker.xib; sourceTree = "<group>"; };
+		FE8BCF952442570300E89DDC /* DestinationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationsService.swift; sourceTree = "<group>"; };
+		FE8BCF9724425F4A00E89DDC /* OrderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderService.swift; sourceTree = "<group>"; };
+		FE8BCF9A244322C200E89DDC /* NavbarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavbarView.xib; sourceTree = "<group>"; };
+		FE8BCF9C24432E4000E89DDC /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
+		FE8BCFA024433C2A00E89DDC /* BasketButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketButton.swift; sourceTree = "<group>"; };
+		FE8BCFA224433FAD00E89DDC /* CatalogItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogItemButton.swift; sourceTree = "<group>"; };
+		FE8BCFA42443416C00E89DDC /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		FE8BCFA62443482000E89DDC /* RoundedButtonWithShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonWithShadow.swift; sourceTree = "<group>"; };
+		FE8BCFA9244B10F800E89DDC /* RobotoSlab-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-ExtraBold.ttf"; sourceTree = "<group>"; };
+		FE8BCFAA244B10FB00E89DDC /* RobotoSlab-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Light.ttf"; sourceTree = "<group>"; };
+		FE8BCFAB244B10FD00E89DDC /* RobotoSlab-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Thin.ttf"; sourceTree = "<group>"; };
+		FE8BCFAC244B10FE00E89DDC /* RobotoSlab-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Medium.ttf"; sourceTree = "<group>"; };
+		FE8BCFAD244B110100E89DDC /* RobotoSlab-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Bold.ttf"; sourceTree = "<group>"; };
+		FE8BCFAE244B110200E89DDC /* RobotoSlab-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Regular.ttf"; sourceTree = "<group>"; };
+		FE8BCFAF244B110400E89DDC /* RobotoSlab-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Black.ttf"; sourceTree = "<group>"; };
+		FE8BCFB0244B110600E89DDC /* RobotoSlab-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-SemiBold.ttf"; sourceTree = "<group>"; };
+		FE8BCFB1244B110700E89DDC /* RobotoSlab-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-ExtraLight.ttf"; sourceTree = "<group>"; };
+		FE8BCFB2244B158F00E89DDC /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = SOURCE_ROOT; };
+		FE8BCFB4244B1FD400E89DDC /* UIColor+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = SOURCE_ROOT; };
+		FE8BCFB7244B465E00E89DDC /* DestinationTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationTitleCell.swift; sourceTree = "<group>"; };
+		FE8BCFB8244B465E00E89DDC /* DestinationTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DestinationTitleCell.xib; sourceTree = "<group>"; };
 		FEF505F5234D3C470052ACA5 /* FlowersUnicorn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowersUnicorn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEF505F8234D3C470052ACA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEF50601234D3C4A0052ACA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,6 +149,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		742D10661CB735816351106E /* ItemCell */ = {
+			isa = PBXGroup;
+			children = (
+				742D1D289A44CC8A79CE7CA0 /* BasketItemOrderCell.swift */,
+				742D1BCF3B987DDD1B216D3D /* BasketItemOrderCell.xib */,
+			);
+			path = ItemCell;
+			sourceTree = "<group>";
+		};
 		8AA3EF59CA9EC6DF244D90E0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +180,8 @@
 			children = (
 				F4330D162364788400D33739 /* CatalogService.swift */,
 				F49AE8B5236F0D6D00516681 /* BasketService.swift */,
+				FE8BCF952442570300E89DDC /* DestinationsService.swift */,
+				FE8BCF9724425F4A00E89DDC /* OrderService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -152,6 +226,7 @@
 			children = (
 				F448BA842363A3C500E3A99A /* CatalogView.swift */,
 				F448BA852363A3C500E3A99A /* CatalogView.xib */,
+				FE8BCF992443229900E89DDC /* NavBar */,
 				F448BA8D2363A57B00E3A99A /* Cells */,
 			);
 			path = View;
@@ -187,6 +262,14 @@
 			children = (
 				F49AE897236EEA0A00516681 /* WhiteButton.swift */,
 				F49AE8B3236F05DD00516681 /* WhiteLabel.swift */,
+				FE8BCF9C24432E4000E89DDC /* TitleLabel.swift */,
+				FE8BCFA024433C2A00E89DDC /* BasketButton.swift */,
+				FE8BCFA224433FAD00E89DDC /* CatalogItemButton.swift */,
+				FE8BCFA42443416C00E89DDC /* Colors.swift */,
+				FE8BCFA62443482000E89DDC /* RoundedButtonWithShadow.swift */,
+				FE8BCFB4244B1FD400E89DDC /* UIColor+Additions.swift */,
+				742D1A53CDA0C5D6BA3AC8B1 /* BasketField.swift */,
+				742D1C81343DA7C7285881FA /* BasketTextView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -231,6 +314,7 @@
 		F49AE8BC237052F800516681 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FE8BCF8F24424D8000E89DDC /* DatePicker */,
 				F49AE8C42370561A00516681 /* Cells */,
 				F49AE8BD237053C300516681 /* BasketView.swift */,
 				F49AE8BE237053C300516681 /* BasketView.xib */,
@@ -249,8 +333,13 @@
 		F49AE8C42370561A00516681 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				F49AE8C72370564E00516681 /* BasketItemOrderCell.swift */,
-				F49AE8C82370564E00516681 /* BasketItemOrderCell.xib */,
+				FE8BCFB6244B463600E89DDC /* DestinationTitleCell */,
+				742D10661CB735816351106E /* ItemCell */,
+				FE8BCF8A2442494700E89DDC /* DateCell */,
+				FE8BCF752442329900E89DDC /* PriceCell */,
+				FE8BCF7D2442442100E89DDC /* FieldCell */,
+				FE8BCF7E2442445300E89DDC /* DestinationCell */,
+				FE8BCF7F2442446200E89DDC /* OrderCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -264,6 +353,94 @@
 				F448BA892363A3CD00E3A99A /* View */,
 			);
 			path = Catalog;
+			sourceTree = "<group>";
+		};
+		FE8BCF752442329900E89DDC /* PriceCell */ = {
+			isa = PBXGroup;
+			children = (
+				FE8BCF65243A736800E89DDC /* BasketPriceCell.swift */,
+				FE8BCF66243A736800E89DDC /* BasketPriceCell.xib */,
+				FE8BCF76244232B200E89DDC /* BasketPriceCellModel.swift */,
+			);
+			path = PriceCell;
+			sourceTree = "<group>";
+		};
+		FE8BCF7D2442442100E89DDC /* FieldCell */ = {
+			isa = PBXGroup;
+			children = (
+				FE8BCF61243A732E00E89DDC /* BasketFieldCell.swift */,
+				FE8BCF62243A732E00E89DDC /* BasketFieldCell.xib */,
+			);
+			path = FieldCell;
+			sourceTree = "<group>";
+		};
+		FE8BCF7E2442445300E89DDC /* DestinationCell */ = {
+			isa = PBXGroup;
+			children = (
+				FE8BCF6D243A747900E89DDC /* BasketDestinationCell.swift */,
+				FE8BCF6E243A747900E89DDC /* BasketDestinationCell.xib */,
+			);
+			path = DestinationCell;
+			sourceTree = "<group>";
+		};
+		FE8BCF7F2442446200E89DDC /* OrderCell */ = {
+			isa = PBXGroup;
+			children = (
+				FE8BCF782442407900E89DDC /* BasketOrderButtonCell.swift */,
+				FE8BCF792442407900E89DDC /* BasketOrderButtonCell.xib */,
+			);
+			path = OrderCell;
+			sourceTree = "<group>";
+		};
+		FE8BCF8A2442494700E89DDC /* DateCell */ = {
+			isa = PBXGroup;
+			children = (
+				FE8BCF8B2442496300E89DDC /* BasketDateCell.swift */,
+				FE8BCF8C2442496300E89DDC /* BasketDateCell.xib */,
+			);
+			path = DateCell;
+			sourceTree = "<group>";
+		};
+		FE8BCF8F24424D8000E89DDC /* DatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				FE8BCF9024424D9600E89DDC /* BasketDatePicker.swift */,
+				FE8BCF9124424D9600E89DDC /* BasketDatePicker.xib */,
+			);
+			path = DatePicker;
+			sourceTree = "<group>";
+		};
+		FE8BCF992443229900E89DDC /* NavBar */ = {
+			isa = PBXGroup;
+			children = (
+				FE8BCF9A244322C200E89DDC /* NavbarView.xib */,
+			);
+			path = NavBar;
+			sourceTree = "<group>";
+		};
+		FE8BCFA8244B10E800E89DDC /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FE8BCFAF244B110400E89DDC /* RobotoSlab-Black.ttf */,
+				FE8BCFAD244B110100E89DDC /* RobotoSlab-Bold.ttf */,
+				FE8BCFA9244B10F800E89DDC /* RobotoSlab-ExtraBold.ttf */,
+				FE8BCFB1244B110700E89DDC /* RobotoSlab-ExtraLight.ttf */,
+				FE8BCFAA244B10FB00E89DDC /* RobotoSlab-Light.ttf */,
+				FE8BCFAC244B10FE00E89DDC /* RobotoSlab-Medium.ttf */,
+				FE8BCFAE244B110200E89DDC /* RobotoSlab-Regular.ttf */,
+				FE8BCFB0244B110600E89DDC /* RobotoSlab-SemiBold.ttf */,
+				FE8BCFAB244B10FD00E89DDC /* RobotoSlab-Thin.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		FE8BCFB6244B463600E89DDC /* DestinationTitleCell */ = {
+			isa = PBXGroup;
+			children = (
+				FE8BCFB7244B465E00E89DDC /* DestinationTitleCell.swift */,
+				FE8BCFB8244B465E00E89DDC /* DestinationTitleCell.xib */,
+			);
+			path = DestinationTitleCell;
 			sourceTree = "<group>";
 		};
 		FEF505EC234D3C470052ACA5 = {
@@ -297,6 +474,8 @@
 				FEF50603234D3C4A0052ACA5 /* LaunchScreen.storyboard */,
 				FEF50606234D3C4A0052ACA5 /* Info.plist */,
 				F4330D132364785500D33739 /* GoogleService-Info.plist */,
+				FE8BCFB2244B158F00E89DDC /* test.json */,
+				FE8BCFA8244B10E800E89DDC /* fonts */,
 			);
 			path = FlowersUnicorn;
 			sourceTree = "<group>";
@@ -361,14 +540,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE8BCF68243A736800E89DDC /* BasketPriceCell.xib in Resources */,
+				FE8BCFB3244B158F00E89DDC /* test.json in Resources */,
+				FE8BCF7B2442407900E89DDC /* BasketOrderButtonCell.xib in Resources */,
+				FE8BCF64243A732E00E89DDC /* BasketFieldCell.xib in Resources */,
+				FE8BCF9324424D9600E89DDC /* BasketDatePicker.xib in Resources */,
+				FE8BCF9B244322C200E89DDC /* NavbarView.xib in Resources */,
 				F448BA872363A3C500E3A99A /* CatalogView.xib in Resources */,
-				F49AE8CA2370564E00516681 /* BasketItemOrderCell.xib in Resources */,
+				FE8BCFBA244B465E00E89DDC /* DestinationTitleCell.xib in Resources */,
 				FEF50605234D3C4A0052ACA5 /* LaunchScreen.storyboard in Resources */,
 				FEF50602234D3C4A0052ACA5 /* Assets.xcassets in Resources */,
+				FE8BCF70243A747900E89DDC /* BasketDestinationCell.xib in Resources */,
 				F49AE8C0237053C300516681 /* BasketView.xib in Resources */,
+				FE8BCF8E2442496300E89DDC /* BasketDateCell.xib in Resources */,
 				F4330D142364785500D33739 /* GoogleService-Info.plist in Resources */,
 				F49AE895236ED93D00516681 /* CatalogTableViewCell.xib in Resources */,
 				F49AE8A7236EF88500516681 /* CatalogItemDetailView.xib in Resources */,
+				742D1BB77159635142FE8E05 /* BasketItemOrderCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,25 +610,43 @@
 			buildActionMask = 2147483647;
 			files = (
 				F49AE8BF237053C300516681 /* BasketView.swift in Sources */,
+				FE8BCFA52443416C00E89DDC /* Colors.swift in Sources */,
+				FE8BCFB9244B465E00E89DDC /* DestinationTitleCell.swift in Sources */,
 				FE587BF523639D1400EBDE1B /* CatalogProtocols.swift in Sources */,
+				FE8BCF962442570300E89DDC /* DestinationsService.swift in Sources */,
+				FE8BCF9D24432E4000E89DDC /* TitleLabel.swift in Sources */,
 				F49AE8B9237045EA00516681 /* BasketProtocols.swift in Sources */,
+				FE8BCFB5244B1FD400E89DDC /* UIColor+Additions.swift in Sources */,
 				F49AE8B6236F0D6D00516681 /* BasketService.swift in Sources */,
 				F49AE8B4236F05DD00516681 /* WhiteLabel.swift in Sources */,
 				F448BA942363A7C400E3A99A /* CatalogModuleFactory.swift in Sources */,
+				FE8BCF6F243A747900E89DDC /* BasketDestinationCell.swift in Sources */,
+				FE8BCFA124433C2A00E89DDC /* BasketButton.swift in Sources */,
+				FE8BCF63243A732E00E89DDC /* BasketFieldCell.swift in Sources */,
 				F49AE8A6236EF88500516681 /* CatalogItemDetailView.swift in Sources */,
 				F49AE8A3236EF86700516681 /* CatalogItemDetailPresenter.swift in Sources */,
+				FE8BCF9824425F4A00E89DDC /* OrderService.swift in Sources */,
 				F49AE898236EEA0A00516681 /* WhiteButton.swift in Sources */,
 				F49AE8C32370556A00516681 /* BasketViewPresenter.swift in Sources */,
+				FE8BCF67243A736800E89DDC /* BasketPriceCell.swift in Sources */,
+				FE8BCF8D2442496300E89DDC /* BasketDateCell.swift in Sources */,
+				FE8BCF77244232B200E89DDC /* BasketPriceCellModel.swift in Sources */,
 				FEF505F9234D3C470052ACA5 /* AppDelegate.swift in Sources */,
 				F448BA822363A33B00E3A99A /* CellModel.swift in Sources */,
 				F448BA862363A3C500E3A99A /* CatalogView.swift in Sources */,
 				F49AE89E236EF82900516681 /* CatalogItemDetailProtocols.swift in Sources */,
 				F4330D1C2364790800D33739 /* CatalogItem.swift in Sources */,
-				F49AE8C92370564E00516681 /* BasketItemOrderCell.swift in Sources */,
+				FE8BCFA324433FAD00E89DDC /* CatalogItemButton.swift in Sources */,
 				F448BA8C2363A3EB00E3A99A /* CatalogPresenter.swift in Sources */,
 				F49AE894236ED93D00516681 /* CatalogTableViewCell.swift in Sources */,
+				FE8BCF7A2442407900E89DDC /* BasketOrderButtonCell.swift in Sources */,
 				F49AE89B236EEC5300516681 /* CatalogCoordinator.swift in Sources */,
 				F4330D172364788400D33739 /* CatalogService.swift in Sources */,
+				FE8BCFA72443482000E89DDC /* RoundedButtonWithShadow.swift in Sources */,
+				FE8BCF9224424D9600E89DDC /* BasketDatePicker.swift in Sources */,
+				742D1B97CA2733DCDA987B18 /* BasketField.swift in Sources */,
+				742D15E699266114C3CA7A3B /* BasketItemOrderCell.swift in Sources */,
+				742D1B9FCA05C23B44AF6FC7 /* BasketTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

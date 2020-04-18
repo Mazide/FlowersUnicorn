@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,7 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CatalogItemDetailView" customModule="FlowersUnicorn" customModuleProvider="target">
             <connections>
                 <outlet property="buyButton" destination="hIQ-Ck-rQe" id="ZhE-Yl-hr7"/>
-                <outlet property="descriptionTextView" destination="00p-j3-wtF" id="Bzn-Pj-6IO"/>
+                <outlet property="descriptionTextView" destination="GkC-ac-uI5" id="YVb-hw-r4X"/>
                 <outlet property="imageView" destination="bBf-7r-J5p" id="CRg-sl-PUa"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -30,16 +30,6 @@
                                 <constraint firstAttribute="height" constant="500" id="Z18-8W-VVr"/>
                             </constraints>
                         </imageView>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="00p-j3-wtF">
-                            <rect key="frame" x="8" y="508" width="398" height="308"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="308" id="OeL-Oi-DLi"/>
-                            </constraints>
-                            <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                        </textView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIQ-Ck-rQe">
                             <rect key="frame" x="20" y="824" width="373" height="50"/>
                             <constraints>
@@ -51,22 +41,29 @@
                                 <action selector="buy" destination="-1" eventType="touchUpInside" id="byL-v0-vfm"/>
                             </connections>
                         </button>
+                        <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GkC-ac-uI5">
+                            <rect key="frame" x="8" y="508" width="398" height="313"/>
+                            <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <wkWebViewConfiguration key="configuration">
+                                <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                <wkPreferences key="preferences"/>
+                            </wkWebViewConfiguration>
+                        </wkWebView>
                     </subviews>
                     <constraints>
                         <constraint firstItem="bBf-7r-J5p" firstAttribute="trailing" secondItem="iZl-QW-4FJ" secondAttribute="trailing" id="Aix-lq-1fB"/>
+                        <constraint firstItem="iZl-QW-4FJ" firstAttribute="trailing" secondItem="GkC-ac-uI5" secondAttribute="trailing" constant="8" id="BQq-3A-fCd"/>
                         <constraint firstItem="iZl-QW-4FJ" firstAttribute="trailing" secondItem="hIQ-Ck-rQe" secondAttribute="trailing" constant="21" id="Cww-p3-4eX"/>
                         <constraint firstItem="bBf-7r-J5p" firstAttribute="leading" secondItem="iZl-QW-4FJ" secondAttribute="leading" id="Dv1-YT-3KF"/>
+                        <constraint firstItem="hIQ-Ck-rQe" firstAttribute="top" secondItem="GkC-ac-uI5" secondAttribute="bottom" constant="3" id="EdB-vY-Qge"/>
                         <constraint firstItem="iZl-QW-4FJ" firstAttribute="trailing" secondItem="hIQ-Ck-rQe" secondAttribute="trailing" constant="21" id="Gjv-G2-eVe"/>
                         <constraint firstItem="iZl-QW-4FJ" firstAttribute="bottom" secondItem="hIQ-Ck-rQe" secondAttribute="bottom" constant="22" id="I82-cH-uUK"/>
-                        <constraint firstItem="hIQ-Ck-rQe" firstAttribute="top" secondItem="00p-j3-wtF" secondAttribute="bottom" constant="8" id="JJU-T6-phK"/>
-                        <constraint firstItem="00p-j3-wtF" firstAttribute="leading" secondItem="iZl-QW-4FJ" secondAttribute="leading" constant="8" id="WGO-cp-cCk"/>
                         <constraint firstItem="bBf-7r-J5p" firstAttribute="top" secondItem="iZl-QW-4FJ" secondAttribute="top" id="cVm-Qu-Tlp"/>
-                        <constraint firstItem="iZl-QW-4FJ" firstAttribute="trailing" secondItem="00p-j3-wtF" secondAttribute="trailing" constant="8" id="hdX-d2-cov"/>
-                        <constraint firstItem="00p-j3-wtF" firstAttribute="top" secondItem="bBf-7r-J5p" secondAttribute="bottom" constant="8" id="mfQ-3l-xab"/>
-                        <constraint firstItem="hIQ-Ck-rQe" firstAttribute="top" secondItem="00p-j3-wtF" secondAttribute="bottom" constant="8" id="n4d-lU-ehC"/>
+                        <constraint firstItem="GkC-ac-uI5" firstAttribute="top" secondItem="bBf-7r-J5p" secondAttribute="bottom" constant="8" id="fbz-tx-Nla"/>
                         <constraint firstItem="hIQ-Ck-rQe" firstAttribute="leading" secondItem="iZl-QW-4FJ" secondAttribute="leading" constant="20" id="u3i-VA-t14"/>
                         <constraint firstItem="iZl-QW-4FJ" firstAttribute="bottom" secondItem="hIQ-Ck-rQe" secondAttribute="bottom" constant="22" id="u4m-pm-3Qg"/>
                         <constraint firstItem="hIQ-Ck-rQe" firstAttribute="leading" secondItem="iZl-QW-4FJ" secondAttribute="leading" constant="20" id="ubn-3T-0pI"/>
+                        <constraint firstItem="GkC-ac-uI5" firstAttribute="leading" secondItem="iZl-QW-4FJ" secondAttribute="leading" constant="8" id="ukY-Rd-YRt"/>
                     </constraints>
                     <viewLayoutGuide key="contentLayoutGuide" id="UDg-5x-wYi"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="iZl-QW-4FJ"/>

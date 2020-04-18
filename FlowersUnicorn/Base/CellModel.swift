@@ -27,4 +27,5 @@ protocol ListViewInput: class {
 
 protocol ListViewOutput: class {
     func viewDidLoad()
+    func viewWillAppear()
 }

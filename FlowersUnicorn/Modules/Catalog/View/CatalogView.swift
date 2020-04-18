@@ -13,29 +13,32 @@ class CatalogView: UIViewController {
     var output: CatalogViewOutput?
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var basketButton: UIButton!
-    @IBOutlet weak var basketButtonBottomConstaint: NSLayoutConstraint!
+    @IBOutlet weak var basketBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var basketButton: BasketButton!
     
     var cellModels: [CellModel]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        title = "Каталог"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        
+    
+                
+        let logoView = UINib(nibName: "NavbarView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! UIView
+        logoView.frame = CGRect.init(x: 0, y: 0, width: view.frame.width, height: 50)
+        logoView.sizeToFit()
+        self.navigationItem.titleView = logoView
+
         tableView.separatorStyle = .none
-        tableView.separatorColor = .clear
-        
+                
         output?.loadData()
     }
     
-    @IBAction func showBasket() {
+    @IBAction func openBasket() {
         output?.didTapBasket()
     }
 }
 
 extension CatalogView: CatalogViewInput {
+    
     func setup(cellModels: [CellModel]) {
         for cellModel in cellModels {
             let nib = UINib.init(nibName: cellModel.cellId, bundle: nil)
@@ -46,13 +49,15 @@ extension CatalogView: CatalogViewInput {
         self.tableView.reloadData()
     }
     
-    func displayBasket(display: Bool, animated: Bool) {
-        let bottomBasketConstraintConstant: CGFloat = display ? 30 : -100
-        let duration = animated ? 0.3 : 0
-        UIView.animate(withDuration: duration) {
-            self.basketButtonBottomConstaint.constant = bottomBasketConstraintConstant
+    func showBasketButton(show: Bool) {
+        basketBottomConstraint.constant = show ? 15 : -100
+        UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
+    }
+    
+    func setupPrice(priceString: NSAttributedString) {
+        basketButton.infoLabel.attributedText = priceString
     }
 }
 

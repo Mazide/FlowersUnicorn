@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scheme
+   version = "1.3">
+   <BuildAction>
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForRunning = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FEF505F4234D3C470052ACA5"
+               BuildableName = "FlowersUnicorn.app"
+               BlueprintName = "FlowersUnicorn"
+               ReferencedContainer = "container:FlowersUnicorn.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
+   </BuildAction>
+   <LaunchAction
+      useCustomWorkingDirectory = "NO"
+      buildConfiguration = "Debug"
+      allowLocationSimulation = "YES">
+      <BuildableProductRunnable>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "FEF505F4234D3C470052ACA5"
+            BuildableName = "FlowersUnicorn.app"
+            BlueprintName = "FlowersUnicorn"
+            ReferencedContainer = "container:FlowersUnicorn.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+   </LaunchAction>
+</Scheme>

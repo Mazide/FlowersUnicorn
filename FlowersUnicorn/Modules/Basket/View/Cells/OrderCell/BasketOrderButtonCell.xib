@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="RobotoSlab-Regular.ttf">
+            <string>RobotoSlab-Regular</string>
+        </array>
+        <array key="RobotoSlab-SemiBold.ttf">
+            <string>RobotoSlab-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="326" id="KGk-i7-Jjw" customClass="BasketOrderButtonCell" customModule="FlowersUnicorn" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="336"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="336"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kS0-LM-G06">
+                        <rect key="frame" x="16" y="262" width="288" height="58"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="58" id="jxa-mZ-Ro9"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="RobotoSlab-Regular" family="Roboto Slab" pointSize="18"/>
+                        <state key="normal" title="Оформить заказ"/>
+                        <connections>
+                            <action selector="orderButtonTapped" destination="KGk-i7-Jjw" eventType="touchUpInside" id="oNC-gP-Wcr"/>
+                        </connections>
+                    </button>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7FR-ki-ccS" customClass="BasketTextView" customModule="FlowersUnicorn" customModuleProvider="target">
+                        <rect key="frame" x="16" y="61" width="288" height="109"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="109" id="cde-9R-5cB"/>
+                        </constraints>
+                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <fontDescription key="fontDescription" name="RobotoSlab-Regular" family="Roboto Slab" pointSize="18"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Здесь вы можете указать адрес доставки, текст для открытке или пожелание к заказу" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4R-tE-lbz">
+                        <rect key="frame" x="16" y="16" width="288" height="37"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="37" id="NS6-Lm-IFr"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="RobotoSlab-Regular" family="Roboto Slab" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ost-uA-AQJ">
+                        <rect key="frame" x="260" y="204" width="44" height="22.5"/>
+                        <fontDescription key="fontDescription" name="RobotoSlab-SemiBold" family="Roboto Slab" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1q-ly-24a">
+                        <rect key="frame" x="260" y="183.5" width="44" height="22.5"/>
+                        <fontDescription key="fontDescription" name="RobotoSlab-SemiBold" family="Roboto Slab" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сумма:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4XP-B1-eHm">
+                        <rect key="frame" x="16" y="185.5" width="51.5" height="18.5"/>
+                        <fontDescription key="fontDescription" name="RobotoSlab-Regular" family="Roboto Slab" pointSize="14"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2XD-OI-U9e">
+                        <rect key="frame" x="16" y="206" width="36" height="18.5"/>
+                        <fontDescription key="fontDescription" name="RobotoSlab-Regular" family="Roboto Slab" pointSize="14"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Итоговая сумма:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLL-Fi-4l8">
+                        <rect key="frame" x="16" y="227.5" width="120" height="18.5"/>
+                        <fontDescription key="fontDescription" name="RobotoSlab-Regular" family="Roboto Slab" pointSize="14"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eed-CA-Xbj">
+                        <rect key="frame" x="260" y="225.5" width="44" height="22.5"/>
+                        <fontDescription key="fontDescription" name="RobotoSlab-SemiBold" family="Roboto Slab" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="2XD-OI-U9e" firstAttribute="top" secondItem="4XP-B1-eHm" secondAttribute="bottom" constant="2" id="2u6-99-akB"/>
+                    <constraint firstItem="kS0-LM-G06" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="3Ao-ac-UzI"/>
+                    <constraint firstItem="eed-CA-Xbj" firstAttribute="centerY" secondItem="HLL-Fi-4l8" secondAttribute="centerY" id="3YC-X1-lps"/>
+                    <constraint firstItem="4XP-B1-eHm" firstAttribute="leading" secondItem="2XD-OI-U9e" secondAttribute="leading" id="BjT-en-keh"/>
+                    <constraint firstItem="u4R-tE-lbz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="EPS-wl-c3O"/>
+                    <constraint firstAttribute="trailing" secondItem="kS0-LM-G06" secondAttribute="trailing" constant="16" id="J7h-BZ-MK4"/>
+                    <constraint firstItem="HLL-Fi-4l8" firstAttribute="top" secondItem="2XD-OI-U9e" secondAttribute="bottom" constant="3" id="NBW-4z-R6d"/>
+                    <constraint firstItem="ost-uA-AQJ" firstAttribute="trailing" secondItem="kS0-LM-G06" secondAttribute="trailing" id="S2j-1Z-E3c"/>
+                    <constraint firstItem="7FR-ki-ccS" firstAttribute="leading" secondItem="u4R-tE-lbz" secondAttribute="leading" id="auf-AU-9g9"/>
+                    <constraint firstAttribute="trailing" secondItem="u4R-tE-lbz" secondAttribute="trailing" constant="16" id="bM6-Px-1T9"/>
+                    <constraint firstItem="7FR-ki-ccS" firstAttribute="trailing" secondItem="u4R-tE-lbz" secondAttribute="trailing" id="eDB-NZ-5tV"/>
+                    <constraint firstItem="HLL-Fi-4l8" firstAttribute="leading" secondItem="kS0-LM-G06" secondAttribute="leading" id="eFo-qm-z08"/>
+                    <constraint firstItem="eed-CA-Xbj" firstAttribute="trailing" secondItem="kS0-LM-G06" secondAttribute="trailing" id="eR6-OU-GlQ"/>
+                    <constraint firstAttribute="bottom" secondItem="kS0-LM-G06" secondAttribute="bottom" constant="16" id="hND-ru-4JQ"/>
+                    <constraint firstItem="kS0-LM-G06" firstAttribute="top" secondItem="HLL-Fi-4l8" secondAttribute="bottom" constant="16" id="kYf-ag-fQ0"/>
+                    <constraint firstItem="ost-uA-AQJ" firstAttribute="centerY" secondItem="2XD-OI-U9e" secondAttribute="centerY" id="kqu-2B-zxm"/>
+                    <constraint firstItem="u4R-tE-lbz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="mKd-if-p83"/>
+                    <constraint firstItem="7FR-ki-ccS" firstAttribute="top" secondItem="u4R-tE-lbz" secondAttribute="bottom" constant="8" id="qFH-o6-WIK"/>
+                    <constraint firstItem="2XD-OI-U9e" firstAttribute="leading" secondItem="HLL-Fi-4l8" secondAttribute="leading" id="r3l-RQ-0Er"/>
+                    <constraint firstItem="V1q-ly-24a" firstAttribute="trailing" secondItem="kS0-LM-G06" secondAttribute="trailing" id="xCr-rZ-KrT"/>
+                    <constraint firstItem="V1q-ly-24a" firstAttribute="centerY" secondItem="4XP-B1-eHm" secondAttribute="centerY" id="zac-VZ-7Tj"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="commentTextView" destination="7FR-ki-ccS" id="JOO-eW-gtd"/>
+                <outlet property="deliveryPriceLabel" destination="ost-uA-AQJ" id="Ocq-fX-aGt"/>
+                <outlet property="deliveryPriceTitleLabel" destination="2XD-OI-U9e" id="Fsl-v3-8ja"/>
+                <outlet property="fullPriceLabel" destination="eed-CA-Xbj" id="F4P-uj-P6I"/>
+                <outlet property="fullPriceTitleLabel" destination="HLL-Fi-4l8" id="QLg-An-b1x"/>
+                <outlet property="orderButton" destination="kS0-LM-G06" id="f4F-Oe-39T"/>
+                <outlet property="priceLabel" destination="V1q-ly-24a" id="8fN-5T-Jzb"/>
+                <outlet property="priceTitleLabel" destination="4XP-B1-eHm" id="vuS-aA-s3s"/>
+            </connections>
+            <point key="canvasLocation" x="46.376811594202906" y="111.16071428571428"/>
+        </tableViewCell>
+    </objects>
+</document>

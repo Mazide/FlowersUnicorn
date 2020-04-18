@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,14 +20,10 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y9y-vU-uTr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="364"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jbn-Xr-YJ7">
-                                <rect key="frame" x="16" y="8" width="288" height="348"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ID-6c-vhu">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ID-6c-vhu" customClass="RoundedButtonWithShadow" customModule="FlowersUnicorn" customModuleProvider="target">
                                 <rect key="frame" x="16" y="8" width="288" height="348"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SYT-3b-XWK">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SYT-3b-XWK" customClass="RoundedImageViewWithShadow" customModule="FlowersUnicorn" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="348"/>
                                     </imageView>
                                     <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j9a-Zy-Bo2">
@@ -36,7 +32,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="288" height="80"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Dw-iD-9FF" customClass="WhiteButton" customModule="FlowersUnicorn" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Dw-iD-9FF" customClass="CatalogItemButton" customModule="FlowersUnicorn" customModuleProvider="target">
                                                     <rect key="frame" x="183" y="25" width="97" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="97" id="SIr-d9-Tf2"/>
@@ -47,9 +43,9 @@
                                                         <action selector="buy" destination="KGk-i7-Jjw" eventType="touchUpInside" id="oP6-Oj-mhd"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HcZ-kV-DSO" customClass="WhiteLabel" customModule="FlowersUnicorn" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HcZ-kV-DSO" customClass="WhiteLabel" customModule="FlowersUnicorn" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="8" width="167" height="64"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -81,16 +77,12 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Jbn-Xr-YJ7" secondAttribute="bottom" constant="8" id="62C-eh-CqT"/>
-                            <constraint firstItem="Jbn-Xr-YJ7" firstAttribute="top" secondItem="Y9y-vU-uTr" secondAttribute="top" constant="8" id="84W-Wx-YAb"/>
                             <constraint firstAttribute="trailing" secondItem="5ID-6c-vhu" secondAttribute="trailing" constant="16" id="BHf-S9-XG3"/>
-                            <constraint firstItem="Jbn-Xr-YJ7" firstAttribute="leading" secondItem="Y9y-vU-uTr" secondAttribute="leading" constant="16" id="LYU-dF-62V"/>
                             <constraint firstItem="5ID-6c-vhu" firstAttribute="top" secondItem="Y9y-vU-uTr" secondAttribute="top" constant="8" id="PxX-wr-Oy6"/>
                             <constraint firstAttribute="bottom" secondItem="5ID-6c-vhu" secondAttribute="bottom" constant="8" id="f4I-GZ-zAw"/>
                             <constraint firstItem="5ID-6c-vhu" firstAttribute="leading" secondItem="Y9y-vU-uTr" secondAttribute="leading" constant="16" id="gzX-kU-238"/>
-                            <constraint firstAttribute="trailing" secondItem="Jbn-Xr-YJ7" secondAttribute="trailing" constant="16" id="roE-U7-Gj0"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -104,9 +96,9 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="buyButton" destination="8Dw-iD-9FF" id="ZMf-3k-J70"/>
+                <outlet property="gradientView" destination="j9a-Zy-Bo2" id="k1v-KG-Ret"/>
                 <outlet property="imageContainerView" destination="5ID-6c-vhu" id="u2j-w2-a7V"/>
                 <outlet property="itemImageView" destination="SYT-3b-XWK" id="TJz-Io-bm8"/>
-                <outlet property="shadowView" destination="Jbn-Xr-YJ7" id="9u1-3H-Zbx"/>
                 <outlet property="titleLabel" destination="HcZ-kV-DSO" id="WXN-Vc-S3M"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="154.6875"/>

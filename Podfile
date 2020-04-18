@@ -5,9 +5,8 @@ target 'FlowersUnicorn' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'Firebase/Core'
-  pod 'Firebase/Firestore'
-  pod 'FirebaseFirestoreSwift'
   pod 'AlamofireImage'
   pod 'SwiftyJSON', '~> 4.0'
+  pod 'PhoneNumberKit', '~> 3.1'
+  pod 'JVFloatLabeledTextField'
 end

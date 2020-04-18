@@ -14,7 +14,8 @@ protocol CatalogModuleOutput {
 }
 
 protocol CatalogViewInput: ListViewInput {
-    func displayBasket(display: Bool, animated: Bool)
+    func showBasketButton(show: Bool)
+    func setupPrice(priceString: NSAttributedString)
 }
 
 protocol CatalogViewOutput {

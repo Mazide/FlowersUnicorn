@@ -7,23 +7,27 @@
 //
 
 import UIKit
-import FirebaseFirestore
+import SwiftyJSON
 
 class CatalogService: NSObject {
     func obtainCatalogItems(completion: @escaping ([CatalogItem]) -> Void) {
-        let db = Firestore.firestore()
-        db.collection("Catalog").getDocuments { (querySnapshot, err) in
-           if let err = err {
-               print("Error getting documents: \(err)")
-                return
-           }
-            
-            let catalogs = querySnapshot!.documents.map { (document) -> CatalogItem in
-                let catalogItem = CatalogItem(dict: document.data())
-                return catalogItem
-            }
+        guard let path = Bundle.main.path(forResource: "test", ofType: "json") else {
+            return
+        }
         
-            completion(catalogs)
+        guard let jsonData = NSData.init(contentsOfFile: path) as Data? else {
+            return
+        }
+        
+        do {
+            let json: JSON = try JSON.init(data: jsonData )
+            if let items = json["yml_catalog"]["shop"]["offers"]["offer"].array?.map({ (json) -> CatalogItem in
+                return CatalogItem.init(dict: json.dictionaryValue)
+            }) {
+                completion(items);
+            }
+        } catch {
+            print("parsing error")
         }
     }
 }

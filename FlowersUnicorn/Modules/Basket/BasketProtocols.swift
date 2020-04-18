@@ -9,13 +9,13 @@
 import Foundation
 
 protocol BasketViewInput: ListViewInput {
-    
+    func endEditing()
 }
 
 protocol BasketViewOutput: ListViewOutput {
-    
+    func didSelectItem(with id: String)
 }
 
 protocol BasketModuleOutput: class {
-    
+    func didSelectItem(with id: String)
 }

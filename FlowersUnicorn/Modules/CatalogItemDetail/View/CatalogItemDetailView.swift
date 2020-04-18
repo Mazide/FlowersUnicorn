@@ -8,11 +8,12 @@
 
 import UIKit
 import AlamofireImage
+import WebKit
 
 class CatalogItemDetailView: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var descriptionTextView: WKWebView!
     @IBOutlet weak var buyButton: UIButton!
     
     var  output: CatalogItemDetailViewOutput!
@@ -36,7 +37,8 @@ extension CatalogItemDetailView: CatalogItemDetailViewInput {
             imageView.af_setImage(withURL: url)
         }
         
-        descriptionTextView.text = viewModel.fullDescription
+        descriptionTextView.backgroundColor = UIColor.white
+        descriptionTextView.loadHTMLString(viewModel.fullDescription, baseURL: nil)
         
         let title = viewModel.isInBasket() ? "В корзине" : "Купить"
         buyButton.setTitle(title, for: .normal)
