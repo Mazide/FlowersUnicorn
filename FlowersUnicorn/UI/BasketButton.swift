@@ -16,12 +16,13 @@ class BasketButton: UIButton {
         super.init(coder: coder)
         let label = WhiteLabel()
         label.text = "Корзина"
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.font = UIFont.init(name: "RobotoSlab-Regular", size: 18)
+
         addSubview(label)
         
         infoLabel = WhiteLabel()
         infoLabel.text = "3900 Р"
-        infoLabel.font = UIFont.systemFont(ofSize: 16)
+        infoLabel.font = UIFont.init(name: "RobotoSlab-SemiBold", size: 18)
         addSubview(infoLabel)
         
         label.translatesAutoresizingMaskIntoConstraints = false

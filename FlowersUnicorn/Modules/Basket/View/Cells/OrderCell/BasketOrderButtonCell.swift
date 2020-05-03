@@ -22,14 +22,18 @@ class BasketOrderButtonCellModel: CellModel {
 
     var updateLabelsHandler: ((String, String, String, String) -> Void)?
     
-    init(orderButtonHandler: @escaping () -> Void) {
+    var commentChangeHandler: (String) -> Void
+    
+    init(orderButtonHandler: @escaping () -> Void, commentChangeHandler: @escaping (String) -> Void) {
         self.orderButtonHandler = orderButtonHandler
+        self.commentChangeHandler = commentChangeHandler
     }
 }
 
 class BasketOrderButtonCell: UITableViewCell {
     var orderButtonHandler: (() -> Void)?
-
+    var commentChangeHandler: ((String) -> Void)?
+    
     @IBOutlet weak var commentTextView: JVFloatLabeledTextView!
     @IBOutlet weak var orderButton: UIButton!
 
@@ -52,6 +56,8 @@ extension BasketOrderButtonCell: CellModelConfigurable {
             fatalError("incorrect cell model type")
         }
         
+        commentTextView.delegate = self
+        
         orderButtonCellModel.updateLabelsHandler = { [weak self] price, deliveryPrice, deliveryTitle, fullPrice in
             self?.deliveryPriceLabel.text = deliveryPrice
             self?.priceLabel.text = price
@@ -65,5 +71,12 @@ extension BasketOrderButtonCell: CellModelConfigurable {
         orderButton.setTitleColor(UIColor.white, for: .normal)
         orderButton.layer.cornerRadius = 14
         orderButtonHandler = orderButtonCellModel.orderButtonHandler
+        commentChangeHandler = orderButtonCellModel.commentChangeHandler
+    }
+}
+
+extension BasketOrderButtonCell: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        self.commentChangeHandler?(textView.text)
     }
 }

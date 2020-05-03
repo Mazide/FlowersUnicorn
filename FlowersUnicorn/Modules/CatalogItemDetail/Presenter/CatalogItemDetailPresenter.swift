@@ -32,7 +32,7 @@ extension CatalogItemDetailPresenter: CatalogItemDetailViewOutput {
                 fatalError("There isn't item with whis id")
             }
             
-            let viewModel = CatalogItemDetailViewModel(imagePath: item.imagePath, fullDescription: item.fullDescription) { () -> Bool in
+            let viewModel = CatalogItemDetailViewModel(id: item.id ,imagePath: item.imagePath, price: item.price,title: item.title, fullDescription: item.fullDescription) { () -> Bool in
                 guard let itemId = self?.itemId else {
                     fatalError("Detail item id is nil")
                 }
@@ -45,6 +45,10 @@ extension CatalogItemDetailPresenter: CatalogItemDetailViewOutput {
     }
     
     func didTapBuyButton() {
-        
+        if basketService.isContain(id: itemId) {
+            basketService.remove(id: itemId)
+        } else {
+            basketService.add(id: itemId)
+        }
     }
 }

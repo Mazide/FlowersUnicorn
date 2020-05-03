@@ -37,6 +37,8 @@ class BasketViewPresenter: NSObject {
     private var orderItems: [CatalogItem]?
     private var basketDateCellModel: BasketDateCellModel?
     private var makeOrderCellModel: BasketOrderButtonCellModel?
+    private var nameFieldModel: BasketFieldCellModel?
+    private var phoneFieldModel: BasketFieldCellModel?
     
     init(view: BasketViewInput, moduleOutput: BasketModuleOutput) {
         self.view = view
@@ -88,23 +90,34 @@ extension BasketViewPresenter: BasketViewOutput {
                         return newCount
             })
         }
-        
+
         let basketPriceCellModel = BasketPriceCellModel()
         self.priceCellModel = basketPriceCellModel
         cellModels.append(basketPriceCellModel)
-        
-        
-        let nameField = BasketFieldCellModel(placeholder: "Имя", fieldKeyboardType: .default, textDidChangeHandler: { [weak self] (textField) in
+
+        let nameKey = "flowers.basket.name"
+        let phoneKey = "flowers.basket.phone"
+        let savedName = UserDefaults.standard.string(forKey: nameKey)
+        let savedPhone = UserDefaults.standard.string(forKey: phoneKey)
+        orderModel.name = savedName
+        orderModel.phone = savedPhone
+        let nameFieldModel = BasketFieldCellModel(placeholder: "Имя", text: savedName, fieldKeyboardType: .default, textDidChangeHandler: { [weak self] (textField) in
             self?.orderModel.name = textField.text
+            UserDefaults.standard.set(textField.text, forKey: nameKey)
         })
-        let phoneField = BasketFieldCellModel(placeholder: "Телефон", fieldKeyboardType: .phonePad, textDidChangeHandler: { [weak self] (textField) in
+        let phoneFieldModel = BasketFieldCellModel(placeholder: "Телефон", text: savedPhone, fieldKeyboardType: .phonePad, textDidChangeHandler: { [weak self] (textField) in
             let partialFormatter = PartialFormatter(defaultRegion: "RU")
             let formattedPhone = partialFormatter.formatPartial(textField.text ?? "")
             self?.orderModel.phone = formattedPhone
             textField.text = formattedPhone
+            UserDefaults.standard.set(textField.text, forKey: phoneKey)
         })
-        cellModels.append(nameField)
-        cellModels.append(phoneField)
+
+        self.nameFieldModel = nameFieldModel
+        cellModels.append(nameFieldModel)
+
+        self.phoneFieldModel = phoneFieldModel
+        cellModels.append(phoneFieldModel)
         
         self.basketDateCellModel = BasketDateCellModel()
         self.basketDateCellModel?.tapHandler = { [weak self] cellModel in
@@ -142,9 +155,11 @@ extension BasketViewPresenter: BasketViewOutput {
         
         cellModels.append(contentsOf: deliveryDestinationCellModel)
             
-        let makeOrderCellModel = BasketOrderButtonCellModel { [weak self] in
+        let makeOrderCellModel = BasketOrderButtonCellModel.init(orderButtonHandler: { [weak self] in
             self?.makeOrder()
-        }
+        }, commentChangeHandler: { [weak self] comment in
+            self?.orderModel.comment = comment
+        })
 
         self.makeOrderCellModel = makeOrderCellModel
         cellModels.append(makeOrderCellModel)
@@ -197,8 +212,49 @@ extension BasketViewPresenter: BasketViewOutput {
     }
     
     private func makeOrder() {
-        orderService.makeOrder(order: orderModel) { (success, error) in
-            
+        let isNameEmpty = orderModel.name?.count == 0 || orderModel.name == nil
+        let isPhoneEmpty = orderModel.phone?.count == 0 || orderModel.phone == nil
+        if (isNameEmpty) {
+            nameFieldModel?.setupErrorState?(true)
+        }
+
+        if (isPhoneEmpty) {
+            phoneFieldModel?.setupErrorState?(true)
+        }
+
+        if (isNameEmpty || isPhoneEmpty) {
+            let alert = UIAlertController.init(title: "Ошибка", message: "Пожалуйста, заполните поля Имя и Телефон", preferredStyle: .alert)
+            let viewController = self.view as! UIViewController
+            let okAction = UIAlertAction.init(title: "Хорошо", style: .cancel)
+            alert.addAction(okAction)
+            viewController.present(alert, animated: true)
+            return
+        }
+
+        let viewController = view as! UIViewController
+
+        guard let orderItems = self.orderItems else {
+            print("order items is empty")
+            return
+        }
+
+        orderService.makeOrder(order: orderModel, allItems: orderItems) { [weak self] (success, error) in
+            DispatchQueue.main.async {
+
+            guard success, error == nil else {
+                self?.view?.showError()
+                return
+            }
+
+            self?.basketService.clear()
+            let successViewController = SuccessOrderViewController.init(nibName: "SuccessOrderViewController", bundle: nil)
+            successViewController.doneHandler = {
+                viewController.presentingViewController?.dismiss(animated: true)
+            }
+            successViewController.modalPresentationStyle = .custom
+            viewController.modalPresentationStyle = .currentContext
+            viewController.present(successViewController, animated: false)
+            }
         }
     }
     

@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CatalogView" customModule="FlowersUnicorn" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomTitleView" customModule="FlowersUnicorn" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="KsG-LI-F4J">
-                    <rect key="frame" x="5" y="16" width="35" height="33"/>
+                    <rect key="frame" x="51.5" y="7.5" width="50" height="50"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="33" id="BgX-sO-Noc"/>
-                        <constraint firstAttribute="width" constant="35" id="j86-Oy-uii"/>
+                        <constraint firstAttribute="height" constant="50" id="BgX-sO-Noc"/>
+                        <constraint firstAttribute="width" constant="50" id="j86-Oy-uii"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flowers Unicorn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQV-Zi-Hl8" customClass="TitleLabel" customModule="FlowersUnicorn" customModuleProvider="target">
-                    <rect key="frame" x="48" y="16" width="346" height="33"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flowers Unicorn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQV-Zi-Hl8" customClass="TitleLabel" customModule="FlowersUnicorn" customModuleProvider="target">
+                    <rect key="frame" x="109.5" y="0.0" width="195" height="65"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="346" id="1Gl-3N-K5H"/>
+                        <constraint firstAttribute="height" constant="65" id="sWI-Dz-dk0"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="28"/>
                     <nil key="textColor"/>
@@ -33,12 +33,13 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="QQV-Zi-Hl8" secondAttribute="trailing" constant="20" id="FA9-gp-j0h"/>
-                <constraint firstItem="KsG-LI-F4J" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="PDT-XH-ObA"/>
-                <constraint firstItem="QQV-Zi-Hl8" firstAttribute="bottom" secondItem="KsG-LI-F4J" secondAttribute="bottom" id="Yy5-Uy-mTe"/>
+                <constraint firstItem="KsG-LI-F4J" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="7.5" id="0Sz-v9-asG"/>
+                <constraint firstItem="QQV-Zi-Hl8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="0md-LV-zZp"/>
+                <constraint firstItem="QQV-Zi-Hl8" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="Vvf-KQ-RlZ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="KsG-LI-F4J" secondAttribute="bottom" constant="7.5" id="ZKi-8H-aWd"/>
                 <constraint firstItem="KsG-LI-F4J" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ePL-eX-7kc"/>
                 <constraint firstItem="QQV-Zi-Hl8" firstAttribute="leading" secondItem="KsG-LI-F4J" secondAttribute="trailing" constant="8" id="kM5-TI-Pfg"/>
-                <constraint firstItem="QQV-Zi-Hl8" firstAttribute="top" secondItem="KsG-LI-F4J" secondAttribute="top" id="mp6-8O-XSG"/>
+                <constraint firstItem="QQV-Zi-Hl8" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="ldT-EJ-T5l"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

@@ -9,8 +9,8 @@
 import Foundation
 
 protocol CatalogModuleOutput {
-    func didSelectCatalogItem(with id: String)
-    func didTapBasket()
+    func didSelectCatalogItem(with id: String, closeHandler: @escaping () -> Void) 
+    func didTapBasket(basketCloseHandler: @escaping () -> Void)
 }
 
 protocol CatalogViewInput: ListViewInput {

@@ -15,38 +15,97 @@ class CatalogView: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var basketBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var basketButton: BasketButton!
-    
+    var refreshControl = UIRefreshControl()
+
     var cellModels: [CellModel]?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-                
-        let logoView = UINib(nibName: "NavbarView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! UIView
+        tableView.contentInsetAdjustmentBehavior = .automatic
+
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+    }
+
+    @objc func refresh(_ sender: AnyObject) {
+        output?.loadData()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let logoView = UINib(nibName: "NavbarView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! CustomTitleView
         logoView.frame = CGRect.init(x: 0, y: 0, width: view.frame.width, height: 50)
         logoView.sizeToFit()
         self.navigationItem.titleView = logoView
-
+        
+        let supportButton = UIButton()
+        let supportIcon = UIImage(named: "support")
+        supportButton.setBackgroundImage(supportIcon, for: .normal)
+        supportButton.addTarget(self, action: #selector(openInfo), for: .touchUpInside)
+        let supportButtonItem = UIBarButtonItem.init(customView: supportButton)
+        
+        self.navigationItem.rightBarButtonItem = supportButtonItem
+        
         tableView.separatorStyle = .none
-                
+
         output?.loadData()
+
+
     }
     
     @IBAction func openBasket() {
         output?.didTapBasket()
+    }
+    
+    @objc func openInfo() {
+        let alertVC = UIAlertController.init(title: nil, message: nil, preferredStyle: .actionSheet)
+        let showInfoAction = UIAlertAction.init(title: "Доставка и контакты", style: .default) { [weak self] (_) in
+            let infoViewController = ContactsViewController.init(nibName: "ContactsViewController", bundle: nil)
+            self?.present(infoViewController, animated: true, completion: nil)
+        }
+                    
+        let showWhatsAppMoskow = UIAlertAction.init(title: "Москва WhatsApp", style: .default) { (_) in
+            let botURL = URL.init(string: "whatsapp://send/?phone=79313764695&text")
+
+            if UIApplication.shared.canOpenURL(botURL!) {
+                UIApplication.shared.open(botURL!, options: [:], completionHandler: nil)
+            }
+        }
+        
+        let showWhatsAppSpb = UIAlertAction.init(title: "Санкт-Петербург WhatsApp", style: .default) { (_) in
+            let botURL = URL.init(string: "whatsapp://send/?phone=79095796196&text")
+
+            if UIApplication.shared.canOpenURL(botURL!) {
+                UIApplication.shared.open(botURL!, options: [:], completionHandler: nil)
+            }
+        }
+
+        
+        let cancel = UIAlertAction.init(title: "Отмена", style: .cancel, handler: nil)
+        
+        alertVC.addAction(showInfoAction)
+        alertVC.addAction(showWhatsAppMoskow)
+        alertVC.addAction(showWhatsAppSpb)
+        alertVC.addAction(cancel)
+        
+        present(alertVC, animated: true, completion: nil)
     }
 }
 
 extension CatalogView: CatalogViewInput {
     
     func setup(cellModels: [CellModel]) {
-        for cellModel in cellModels {
-            let nib = UINib.init(nibName: cellModel.cellId, bundle: nil)
-            self.tableView.register(nib, forCellReuseIdentifier: cellModel.cellId)
+        refreshControl.endRefreshing()
+
+        DispatchQueue.main.async {
+            for cellModel in cellModels {
+                let nib = UINib.init(nibName: cellModel.cellId, bundle: nil)
+                self.tableView.register(nib, forCellReuseIdentifier: cellModel.cellId)
+            }
+            
+            self.cellModels = cellModels
+            self.tableView.reloadData()
         }
-        
-        self.cellModels = cellModels
-        self.tableView.reloadData()
     }
     
     func showBasketButton(show: Bool) {
@@ -71,10 +130,16 @@ extension CatalogView: UITableViewDataSource {
             fatalError("Cell models isn't exist")
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: cellModel.cellId, for: indexPath)
-        if let configurableCell = cell as? CellModelConfigurable {
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let cellModel = cellModels?[indexPath.row] else {
+            fatalError("Cell models isn't exist")
+        }
+        if let configurableCell = cell as? CatalogTableViewCell {
             configurableCell.configure(with: cellModel)
         }
-        return cell
     }
 }
 

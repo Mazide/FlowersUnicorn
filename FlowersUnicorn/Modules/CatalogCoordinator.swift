@@ -31,26 +31,24 @@ class CatalogCoordinator {
         return navigationController
     }
     
-    private func createBasketViewController() -> UIViewController {
+}
+
+extension CatalogCoordinator: CatalogModuleOutput {
+    func didTapBasket(basketCloseHandler: @escaping () -> Void) {
         let basketViewController = BasketView(nibName: "BasketView", bundle: nil)
+        basketViewController.dismissHandler = basketCloseHandler
         let basketPresenter = BasketViewPresenter(view: basketViewController, moduleOutput: self)
         basketViewController.output = basketPresenter
         let navigationController = UINavigationController(rootViewController: basketViewController)
         navigationController.setNavigationBarHidden(true, animated: false)
-        return navigationController
-    }
-}
-
-extension CatalogCoordinator: CatalogModuleOutput {
-    func didTapBasket() {
-        let basketViewController = createBasketViewController()
-        catalogViewController?.present(basketViewController, animated: true, completion: nil)
+        catalogViewController?.present(navigationController, animated: true, completion: nil)
     }
     
-    func didSelectCatalogItem(with id: String) {
+    func didSelectCatalogItem(with id: String, closeHandler: @escaping () -> Void) {
         let view = CatalogItemDetailView.init(nibName: "CatalogItemDetailView", bundle: nil)
         let presenter = CatalogItemDetailPresenter(view: view, moduleOutput: self, itemId: id)
         view.output = presenter
+        view.dismissHandler = closeHandler
         catalogViewController?.present(view, animated: true, completion: nil)
     }
 }

@@ -10,24 +10,24 @@ import UIKit
 import SwiftyJSON
 
 class CatalogService: NSObject {
+    var items: [CatalogItem]?
+
     func obtainCatalogItems(completion: @escaping ([CatalogItem]) -> Void) {
-        guard let path = Bundle.main.path(forResource: "test", ofType: "json") else {
-            return
-        }
-        
-        guard let jsonData = NSData.init(contentsOfFile: path) as Data? else {
-            return
-        }
-        
-        do {
-            let json: JSON = try JSON.init(data: jsonData )
+        let url = URL.init(string: "http://maaakso.ru/feed.json")!
+        URLSession.shared.dataTask(with: url) { (jsonData, response, error) in
+            guard let jsonData = jsonData else {
+                return
+            }
+            
+            let json: JSON = try! JSON.init(data: jsonData )
             if let items = json["yml_catalog"]["shop"]["offers"]["offer"].array?.map({ (json) -> CatalogItem in
                 return CatalogItem.init(dict: json.dictionaryValue)
             }) {
-                completion(items);
+                self.items = items
+                DispatchQueue.main.async {
+                    completion(items);
+                }
             }
-        } catch {
-            print("parsing error")
-        }
+        }.resume()
     }
 }

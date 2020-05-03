@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AlamofireImage
 
 struct CatalogItemCollectionCellModel: CellModel {    
     var modelId: String
@@ -38,30 +37,25 @@ class CatalogTableViewCell: UITableViewCell {
     
     @IBAction func buy() {
         catalogCellModel?.buyHandler?(catalogCellModel)
-        
-        checkIsInBasket()
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        itemImageView.layer.cornerRadius = 15
-        itemImageView.clipsToBounds = true
-        
-        let path = UIBezierPath(roundedRect: gradientView.bounds,
-                                byRoundingCorners: [.bottomRight, .bottomLeft],
-                                cornerRadii: CGSize(width: 15, height: 15))
 
-        let maskLayer = CAShapeLayer()
-
-        maskLayer.path = path.cgPath
-        gradientView.layer.mask = maskLayer
-        gradientView.clipsToBounds = true
+        let isInBasket = catalogCellModel?.isInBasketHandler?(catalogCellModel) ?? false
+        if isInBasket {
+            buyButton.setTitle("В корзине", for: .normal)
+            buyButton.setTitleColor(isInBasket ? .white : .pinkRed, for: .normal)
+            buyButton.backgroundColor = isInBasket ? .indigoBlue : .white
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.checkIsInBasket()
+            }
+        } else {
+            checkIsInBasket()
+        }
     }
     
     func checkIsInBasket() {
         let isInBasket = catalogCellModel?.isInBasketHandler?(catalogCellModel) ?? false
-        let buyButtonTitle = isInBasket ? "В Корзине" : catalogCellModel.price
-        buyButton.setTitle(buyButtonTitle, for: .normal)
+        buyButton.setTitle(catalogCellModel.price, for: .normal)
+        buyButton.setTitleColor(isInBasket ? .white : .pinkRed, for: .normal)
+        buyButton.backgroundColor = isInBasket ? .indigoBlue : .white
     }
 }
 
@@ -76,10 +70,10 @@ extension CatalogTableViewCell: CellModelConfigurable {
         buyButton.titleLabel?.text = catalogCellModel.price
                 
         if let imageURL = URL(string: catalogCellModel.imagePath) {
-            itemImageView?.clipsToBounds = true
-            itemImageView?.af_setImage(withURL: imageURL, completion: { [weak self] (response) in
-                self?.setNeedsLayout()
-            })
+            imageContainerView.layer.cornerRadius = 15;
+            imageContainerView.contentMode = .scaleAspectFill
+            imageContainerView.layer.masksToBounds = true
+            itemImageView.af.setImage(withURL: imageURL)
         }
         
         titleLabel.text = catalogCellModel.title
@@ -106,10 +100,9 @@ internal extension CatalogTableViewCell {
     }
 
     private func animate(isHighlighted: Bool, completion: ((Bool) -> Void)?=nil) {
-        let animationOptions: UIView.AnimationOptions = true
-        ? [.allowUserInteraction] : []
+        let animationOptions: UIView.AnimationOptions = [.allowUserInteraction]
         if isHighlighted {
-            UIView.animate(withDuration: 0.5,
+            UIView.animate(withDuration: 0.24,
                            delay: 0,
                            usingSpringWithDamping: 1,
                            initialSpringVelocity: 0,
@@ -117,7 +110,7 @@ internal extension CatalogTableViewCell {
                             self.transform = .init(scaleX: 0.96, y: 0.96)
             }, completion: completion)
         } else {
-            UIView.animate(withDuration: 0.5,
+            UIView.animate(withDuration: 0.24,
                            delay: 0,
                            usingSpringWithDamping: 1,
                            initialSpringVelocity: 0,

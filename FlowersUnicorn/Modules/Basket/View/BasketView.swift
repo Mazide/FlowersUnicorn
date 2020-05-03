@@ -15,10 +15,10 @@ class BasketView: UIViewController {
     
     var output: BasketViewOutput!
     var cellModels: [CellModel]?
+    var dismissHandler: (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
 
         tableView.separatorStyle = .none
         tableView.separatorColor = .clear
@@ -34,6 +34,11 @@ class BasketView: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         output.viewWillAppear()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        dismissHandler?()
     }
     
 
@@ -72,7 +77,13 @@ extension BasketView: BasketViewInput {
         self.cellModels = cellModels
         self.tableView.reloadData()
     }
-    
+
+    func showError() {
+        let alertVC = UIAlertController(title: "Ошибка", message: "Что-то пошло не так", preferredStyle: .alert)
+        alertVC.addAction(.init(title: "ОК", style: .cancel))
+        present(alertVC, animated: true)
+    }
+
     func endEditing() {
         view.endEditing(true)
     }

@@ -8,7 +8,6 @@
 
 import UIKit
 import AlamofireImage
-import GMStepper
 
 typealias BasketItemOrderCellChangeCountHandler = (Int) -> Int
 
@@ -67,7 +66,7 @@ extension BasketItemOrderCell: CellModelConfigurable {
         countLabel.text = String(changeCountHandler?(0) ?? 0)
 
         if let url = URL.init(string: basketItemCellModel.iconPath) {
-            photoView?.af_setImage(withURL: url)
+            photoView?.af.setImage(withURL: url)
         }
     }
 }

@@ -10,6 +10,7 @@ import Foundation
 
 protocol BasketViewInput: ListViewInput {
     func endEditing()
+    func showError()
 }
 
 protocol BasketViewOutput: ListViewOutput {

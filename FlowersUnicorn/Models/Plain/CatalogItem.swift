@@ -18,10 +18,10 @@ struct CatalogItem {
     
     init(dict: [String: Any]) {
         let json = JSON(dict)
-        id = json["-id"].stringValue
+        id = json["_id"].stringValue
         imagePath = json["picture"].stringValue
         price = json["price"].floatValue
         title = json["name"].stringValue
-        fullDescription = json["description"].stringValue
+        fullDescription = json["description"]["__cdata"].stringValue
     }
 }

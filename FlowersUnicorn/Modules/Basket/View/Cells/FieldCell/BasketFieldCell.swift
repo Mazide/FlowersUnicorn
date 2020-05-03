@@ -11,7 +11,7 @@ import JVFloatLabeledTextField
 
 typealias BasketFieldCellTextDidChangeHandler = (UITextField) -> Void
 
-struct BasketFieldCellModel: CellModel {
+class BasketFieldCellModel: CellModel {
     var modelId: String = "BasketFieldCell"
     
     var cellId: String = "BasketFieldCell"
@@ -22,13 +22,24 @@ struct BasketFieldCellModel: CellModel {
 
     let placeholder: String
 
+    let text: String?
+
     let fieldKeyboardType: UIKeyboardType
 
     let textDidChangeHandler: BasketFieldCellTextDidChangeHandler?
+
+    var setupErrorState: ((Bool) -> Void)?
+
+    init(placeholder: String, text: String?, fieldKeyboardType: UIKeyboardType, textDidChangeHandler: BasketFieldCellTextDidChangeHandler?) {
+        self.placeholder = placeholder
+        self.text = text
+        self.fieldKeyboardType = fieldKeyboardType
+        self.textDidChangeHandler = textDidChangeHandler
+    }
 }
 
 class BasketFieldCell: UITableViewCell {
-    @IBOutlet weak var field: JVFloatLabeledTextField!
+    @IBOutlet weak var field: BasketField!
     var textDidChangeHandler: BasketFieldCellTextDidChangeHandler?
 }
 
@@ -43,9 +54,16 @@ extension BasketFieldCell: CellModelConfigurable {
         field.placeholder = fieldCellModel.placeholder
         field.keyboardType = fieldCellModel.fieldKeyboardType
         field.autocapitalizationType = .words
+        field.text = fieldCellModel.text
+        fieldCellModel.setupErrorState = { [weak self] enableError in
+            self?.field.line?.backgroundColor = UIColor.red.cgColor
+            self?.field.placeholderColor = UIColor.red
+        }
     }
     
     @IBAction func textDidChange() {
+        field.line?.backgroundColor = UIColor.lightGray.cgColor
+        field.placeholderColor = UIColor.lightGray
         textDidChangeHandler?(field)
     }
 }

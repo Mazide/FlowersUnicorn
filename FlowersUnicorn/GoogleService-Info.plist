@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>12776727681-53f88ug8beleggrlc93b7b6m7b6996vn.apps.googleusercontent.com</string>
+	<string>1027575324805-m9u22eqnbnnq3pee687apkeu7e5rn2s3.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.12776727681-53f88ug8beleggrlc93b7b6m7b6996vn</string>
+	<string>com.googleusercontent.apps.1027575324805-m9u22eqnbnnq3pee687apkeu7e5rn2s3</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDfYJpUD5pYwoZMMEGOC9yVJ9hhsUMsKGs</string>
+	<string>AIzaSyA_lt2EOXhgBd0bMq4e8G28CTsNVnUkOdE</string>
 	<key>GCM_SENDER_ID</key>
-	<string>12776727681</string>
+	<string>1027575324805</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.fu.flowersunicornshop</string>
+	<string>com.flowersunicorn</string>
 	<key>PROJECT_ID</key>
-	<string>flowersunicorn-39fe6</string>
+	<string>flowers-unicorn</string>
 	<key>STORAGE_BUCKET</key>
-	<string>flowersunicorn-39fe6.appspot.com</string>
+	<string>flowers-unicorn.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:12776727681:ios:e6f4b5cbcbaae35df91980</string>
+	<string>1:1027575324805:ios:3495a350c3495b45ba89ec</string>
 	<key>DATABASE_URL</key>
-	<string>https://flowersunicorn-39fe6.firebaseio.com</string>
+	<string>https://flowers-unicorn.firebaseio.com</string>
 </dict>
 </plist>

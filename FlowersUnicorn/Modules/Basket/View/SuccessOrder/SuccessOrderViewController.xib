@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="RobotoSlab-Regular.ttf">
+            <string>RobotoSlab-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SuccessOrderViewController" customModule="FlowersUnicorn" customModuleProvider="target">
+            <connections>
+                <outlet property="blurView" destination="nfC-mE-lnF" id="zfK-GN-Ia0"/>
+                <outlet property="containerView" destination="YEf-Th-bVk" id="ATQ-Z6-MBu"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nfC-mE-lnF">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="emt-eR-A6J">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <blurEffect style="light"/>
+                </visualEffectView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YEf-Th-bVk" customClass="RoundedButtonWithShadow" customModule="FlowersUnicorn" customModuleProvider="target">
+                    <rect key="frame" x="57" y="273" width="300" height="350"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flowers_unicorn-logo-dense" translatesAutoresizingMaskIntoConstraints="NO" id="guu-8C-Qva">
+                            <rect key="frame" x="78" y="16" width="144" height="134"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="134" id="NrM-B1-zMl"/>
+                                <constraint firstAttribute="width" constant="144" id="hJx-SV-fkh"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQp-HJ-jXy">
+                            <rect key="frame" x="10" y="166" width="280" height="120"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="120" id="CcI-e4-qRZ"/>
+                            </constraints>
+                            <string key="text">Спасибо за заказ!
+Скоро мы с Вами свяжемся!!
+
+🥳🥳🥳</string>
+                            <fontDescription key="fontDescription" name="RobotoSlab-Regular" family="Roboto Slab" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Hs-2u-a1N" customClass="BlueButton" customModule="FlowersUnicorn" customModuleProvider="target">
+                            <rect key="frame" x="16" y="284" width="268" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="CKF-23-jYp"/>
+                            </constraints>
+                            <state key="normal" title="Хорошо"/>
+                            <connections>
+                                <action selector="close" destination="-1" eventType="touchUpInside" id="PH7-sy-Cml"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="guu-8C-Qva" firstAttribute="centerX" secondItem="YEf-Th-bVk" secondAttribute="centerX" id="1tV-G0-a1Q"/>
+                        <constraint firstAttribute="trailing" secondItem="bQp-HJ-jXy" secondAttribute="trailing" constant="10" id="89h-lp-GHp"/>
+                        <constraint firstItem="bQp-HJ-jXy" firstAttribute="top" secondItem="guu-8C-Qva" secondAttribute="bottom" constant="16" id="9GJ-za-LSf"/>
+                        <constraint firstAttribute="trailing" secondItem="4Hs-2u-a1N" secondAttribute="trailing" constant="16" id="caD-r2-A94"/>
+                        <constraint firstAttribute="height" constant="350" id="cs8-Gf-Er5"/>
+                        <constraint firstAttribute="bottom" secondItem="4Hs-2u-a1N" secondAttribute="bottom" constant="16" id="g6G-rz-Mtx"/>
+                        <constraint firstItem="bQp-HJ-jXy" firstAttribute="leading" secondItem="YEf-Th-bVk" secondAttribute="leading" constant="10" id="hLd-H3-WAc"/>
+                        <constraint firstItem="bQp-HJ-jXy" firstAttribute="centerX" secondItem="guu-8C-Qva" secondAttribute="centerX" id="hWP-0Z-Kai"/>
+                        <constraint firstAttribute="width" constant="300" id="oOJ-RS-7TD"/>
+                        <constraint firstItem="4Hs-2u-a1N" firstAttribute="centerX" secondItem="YEf-Th-bVk" secondAttribute="centerX" id="t44-8m-8oS"/>
+                        <constraint firstItem="4Hs-2u-a1N" firstAttribute="leading" secondItem="YEf-Th-bVk" secondAttribute="leading" constant="16" id="u27-Jb-gMX"/>
+                        <constraint firstItem="guu-8C-Qva" firstAttribute="top" secondItem="YEf-Th-bVk" secondAttribute="top" constant="16" id="zTL-Eo-WDn"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="nfC-mE-lnF" secondAttribute="bottom" id="369-CJ-b0y"/>
+                <constraint firstItem="nfC-mE-lnF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="7vl-hP-SG0"/>
+                <constraint firstItem="YEf-Th-bVk" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="TWt-GN-AsV"/>
+                <constraint firstItem="nfC-mE-lnF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hsJ-N6-5Ya"/>
+                <constraint firstItem="nfC-mE-lnF" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="kML-7D-UlA"/>
+                <constraint firstItem="YEf-Th-bVk" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="nme-aN-NZe"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="flowers_unicorn-logo-dense" width="158" height="169"/>
+    </resources>
+</document>

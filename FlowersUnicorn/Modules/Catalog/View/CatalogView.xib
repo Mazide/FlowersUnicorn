@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="RobotoSlab-Regular.ttf">
+            <string>RobotoSlab-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CatalogView" customModule="FlowersUnicorn" customModuleProvider="target">
             <connections>
@@ -21,7 +26,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="np2-9Y-bvN">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="np2-9Y-bvN">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -31,11 +36,12 @@
                     </connections>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfk-PP-MfN" customClass="BasketButton" customModule="FlowersUnicorn" customModuleProvider="target">
-                    <rect key="frame" x="16" y="793" width="382" height="54"/>
+                    <rect key="frame" x="20" y="793" width="374" height="54"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="54" id="kIe-8w-lgq"/>
                     </constraints>
+                    <fontDescription key="fontDescription" name="RobotoSlab-Regular" family="Roboto Slab" pointSize="18"/>
                     <state key="normal" image="gradient_button">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
@@ -49,8 +55,8 @@
                 <constraint firstAttribute="bottom" secondItem="np2-9Y-bvN" secondAttribute="bottom" id="1K7-Jg-XvH"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="dfk-PP-MfN" secondAttribute="bottom" constant="15" id="JKe-zD-rim"/>
                 <constraint firstItem="np2-9Y-bvN" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="UZz-9R-7bA"/>
-                <constraint firstItem="dfk-PP-MfN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Yx3-8C-k8b"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dfk-PP-MfN" secondAttribute="trailing" constant="16" id="fpM-lj-0sf"/>
+                <constraint firstItem="dfk-PP-MfN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Yx3-8C-k8b"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dfk-PP-MfN" secondAttribute="trailing" constant="20" id="fpM-lj-0sf"/>
                 <constraint firstItem="np2-9Y-bvN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="i17-76-T1v"/>
                 <constraint firstItem="np2-9Y-bvN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="rv7-pK-CHd"/>
             </constraints>

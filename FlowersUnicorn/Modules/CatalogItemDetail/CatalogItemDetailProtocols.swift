@@ -9,7 +9,10 @@
 import Foundation
 
 struct CatalogItemDetailViewModel {
+    let id: String
     let imagePath: String
+    let price: Float
+    let title: String
     let fullDescription: String
     let isInBasket: () -> Bool
 }

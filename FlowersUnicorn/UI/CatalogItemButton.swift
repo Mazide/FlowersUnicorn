@@ -13,6 +13,7 @@ class CatalogItemButton: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
         self.layer.cornerRadius = frame.height/2
-        backgroundColor = UIColor.white
     }
+
+
 }

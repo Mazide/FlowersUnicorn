@@ -8,10 +8,14 @@
 
 import UIKit
 
+typealias BasketChangeHandler = () -> Void
+
 class BasketService: NSObject {
     private var ids = NSMutableSet()
 
     static let shared = BasketService()
+    
+    var basketChangeHandler: BasketChangeHandler?
     
     override init() {
         super.init()
@@ -19,8 +23,18 @@ class BasketService: NSObject {
             self.ids = NSMutableSet.init(array: idsArray)
         }
     }
+
+    func clear() {
+        ids.removeAllObjects()
+        
+        UserDefaults.standard.set(nil, forKey: "BasketServiceKey")
+        UserDefaults.standard.synchronize()
+    }
     
     func add(id: String) {
+        guard id.count != 0 else {
+            return
+        }
         ids.add(id)
         save()
     }
@@ -31,6 +45,9 @@ class BasketService: NSObject {
     }
     
     func isContain(id: String) -> Bool {
+        guard id.count != 0 else {
+            return false
+        }
         return ids.contains(id)
     }
     
@@ -39,7 +56,9 @@ class BasketService: NSObject {
     }
     
     func save() {
+        basketChangeHandler?()
         UserDefaults.standard.set(ids.allObjects, forKey: "BasketServiceKey")
         UserDefaults.standard.synchronize()
     }
+    
 }
