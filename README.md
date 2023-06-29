@@ -27,12 +27,17 @@ Firebase: A comprehensive platform providing services such as authentication, pu
 ## Installation
 To set up the FlowersUnicorn iOS app repository on your local development environment, follow these steps:
 
+
 Clone the repository from GitHub:
+
 `git clone https://github.com/username/FlowersUnicorn-iOS.git`
+
 Navigate to the project directory and install the required dependencies using CocoaPods:
 
 `cd FlowersUnicorn`
+
 `pod install`
+
 Open the .xcworkspace file in Xcode.
 
 
